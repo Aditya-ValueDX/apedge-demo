@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f4f6;
+}
+
+/* Main container for editor page */
+.editor-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  height: calc(100vh - 110px);
+  padding: 16px 16px;
+  background: #f1f1f1;
+  border-radius: 12px;
+  margin: 16px 32px 16px 70px;
+  width: calc(100% - 105px);
+  /* Ensures proper width even with sidebar */
+  overflow: hidden;
+}
+
+
+/* Left: Invoice document preview */
+.editor-left {
+  flex: 1;
+  min-width: 0;
+  max-width: 52%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.invoice-preview {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  border: none;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* Right: Editable form content */
+.editor-right {
+  flex: 1;
+  min-width: 0;
+  max-width: 50%;
+  background: #fff;
+  padding: 24px 20px 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Title */
+.editor-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+/* Scrollable form content */
+.editor-scroll {
+  overflow-y: auto;
+  max-height: calc(100vh - 220px);
+  padding-right: 8px;
+  padding-bottom: 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* JSONForms & Field Wrappers */
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.form-group input {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #6366f1;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Items table */
+.items-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 28px 0 12px;
+}
+
+.items-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 8px;
+}
+
+.items-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.items-table th,
+.items-table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.items-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.items-table input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+}
+
+/* Action buttons */
+.editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.btn.reject {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn.reject:hover {
+  background-color: #dc2626;
+}
+
+.btn.draft {
+  background-color: #fbbf24;
+  color: #1f2937;
+}
+
+.btn.draft:hover {
+  background-color: #f59e0b;
+}
+
+.btn.approve {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn.approve:hover {
+  background-color: #059669;
+}
+
+/* Loading & Error States */
+.editor-loading,
+.editor-error {
+  padding: 60px;
+  font-size: 18px;
+  color: #4b5563;
+  text-align: center;
+}
+
+/* Responsive (Tablet and Below) */
+@media (max-width: 1024px) {
+  .editor-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .editor-left {
+    height: 400px;
+  }
+
+  .editor-scroll {
+    max-height: none;
+  }
+
+  .editor-actions {
+    justify-content: center;
+  }
+}
+
+.jsonforms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.jsonforms-container .MuiFormControl-root {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.jsonforms-container .MuiInputLabel-root {
+  font-weight: 600;
+  color: #374151;
+}
+
+.jsonforms-container .MuiInputBase-root{
+  height: 40px;
+}
+
+/* .jsonforms-container label.MuiFormLabel-root.MuiInputLabel-root::after {
+  content: '';
+} */
+
+/* Improve label appearance */
+.jsonforms-container .MuiFormLabel-root {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+/* Apply Poppins font to all JSONForms / MUI inputs and labels */
+.jsonforms-container .MuiInputBase-root,
+.jsonforms-container .MuiInputLabel-root,
+.jsonforms-container .MuiFormHelperText-root,
+.jsonforms-container .MuiTypography-root,
+.jsonforms-container input,
+.jsonforms-container textarea,
+.jsonforms-container select {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Valid Input Field (MUI validated) */
+.jsonforms-container .MuiInputBase-root.Mui-focused.MuiInputBase-colorPrimary:not(.Mui-error) {
+  border: 1px solid #10b981; /* green border */
+  background-color: #ecfdf5; /* light green bg */
+}
+
+/* Invalid Input Field */
+.jsonforms-container .Mui-error .MuiInputBase-input {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+}
+
+
+.editor-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.editor-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.editor-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+

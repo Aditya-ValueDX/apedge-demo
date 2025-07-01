@@ -1,0 +1,74 @@
+[
+  {
+    "id": "PO001",
+    "vendor": "NISH SYSTEMS AND SOLUTIONS LTD",
+    "date": "2025-06-01",
+    "dueDate": "2025-06-30",
+    "currency": "INR",
+    "paymentTerms": "Net 30",
+    "discount": 400,
+    "taxRate": 18,
+    "modeOfTransport": "Courier",
+    "deliveryNote": "DEL1234567",
+    "buyerOrderNo": "850675",
+    "billOfLading": "KASGK/4193",
+    "placeOfSupply": "Bangalore",
+    "termsOfDelivery": "Within 1 Week",
+    "items": [
+      {
+        "name": "Dell Docking Station WD19s 180W C-Type",
+        "description": "Model: 7XT6T | Part: 7XT6T/ 138BP | HSN/SAC: 84716060",
+        "hsnsac": "84716061",
+        "quantity": 10,
+        "rate": 10000,
+        "per": "No",
+        "amount": 100000
+      },
+      {
+        "name": "Mouse M170 Wireless - Logitech",
+        "description": "Serial Numbers Attached Separately",
+        "hsnsac": "84716060",
+        "quantity": 40,
+        "rate": 600,
+        "per": "No",
+        "amount": 24000
+      }
+    ]
+  },
+  {
+    "id": "PO002",
+    "vendor": "NISH SYSTEMS AND SOLUTIONS LTD",
+    "date": "2025-06-01",
+    "dueDate": "2025-06-30",
+    "currency": "INR",
+    "paymentTerms": "Net 30",
+    "discount": 400,
+    "taxRate": 18,
+    "modeOfTransport": "Courier",
+    "buyerOrderNo": "850675",
+    "deliveryNote": "DEL1234567",
+    "placeOfSupply": "Bangalore",
+    "termsOfDelivery": "Within 1 Week",
+    "billOfLading": "KASGK/4193",
+    "items": [
+      {
+        "name": "Dell Docking Station WD19s 180W C-Type",
+        "description": "Model: 7XT6T | Part: 7XT6T/ 138BP | HSN/SAC: 84716060",
+        "hsnsac": "84716061",
+        "quantity": 10,
+        "rate": 10000,
+        "per": "No",
+        "amount": 100000
+      },
+      {
+        "name": "Mouse M170 Wireless - Logitech",
+        "description": "Serial Numbers Attached Separately",
+        "hsnsac": "84716060",
+        "quantity": 40,
+        "rate": 600,
+        "per": "No",
+        "amount": 24000
+      }
+    ]
+  }
+]

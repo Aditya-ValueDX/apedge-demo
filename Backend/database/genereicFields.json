@@ -1,0 +1,324 @@
+[
+  {
+    "section": "Seller Information",
+    "Feild": "Name",
+    "type": "text",
+    "required": true,
+    "desc": "Name of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "Udyam No",
+    "type": "text",
+    "required": true,
+    "desc": "Udyam No of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "Address",
+    "type": "text",
+    "required": true,
+    "desc": "Address of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "Gstin",
+    "type": "text",
+    "required": true,
+    "desc": "Gstin of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "State",
+    "type": "text",
+    "required": true,
+    "desc": "State of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "State Code",
+    "type": "text",
+    "required": true,
+    "desc": "State Code of the seller"
+  },
+  {
+    "section": "Seller Information",
+    "Feild": "Email",
+    "type": "text",
+    "required": true,
+    "desc": "Email of the seller"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Invoice No",
+    "type": "text",
+    "required": true,
+    "desc": "Invoice No of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Eway Bill No",
+    "type": "text",
+    "required": true,
+    "desc": "Eway Bill No of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Invoice Date",
+    "type": "number",
+    "required": true,
+    "desc": "Invoice Date of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Payment Terms",
+    "type": "text",
+    "required": true,
+    "desc": "Payment Terms of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Order No",
+    "type": "text",
+    "required": true,
+    "desc": "Order No of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Order Date",
+    "type": "number",
+    "required": true,
+    "desc": "Order Date of the invoice"
+  },
+  {
+    "section": "Invoice Information",
+    "Feild": "Reference User",
+    "type": "text",
+    "required": true,
+    "desc": "Reference User of the invoice"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Name",
+    "type": "text",
+    "required": true,
+    "desc": "Name of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Address",
+    "type": "text",
+    "required": true,
+    "desc": "Address of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Gstin",
+    "type": "text",
+    "required": true,
+    "desc": "Gstin of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "State",
+    "type": "text",
+    "required": true,
+    "desc": "State of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "State Code",
+    "type": "text",
+    "required": true,
+    "desc": "State Code of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Contact Person",
+    "type": "text",
+    "required": true,
+    "desc": "Contact Person of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Vehicle No",
+    "type": "text",
+    "required": true,
+    "desc": "Vehicle No of the buyer"
+  },
+  {
+    "section": "Buyer Information",
+    "Feild": "Delivery Terms",
+    "type": "text",
+    "required": true,
+    "desc": "Delivery Terms of the buyer"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Description",
+    "type": "text",
+    "required": true,
+    "desc": "Description of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Hsn",
+    "type": "text",
+    "required": true,
+    "desc": "Hsn of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Quantity",
+    "type": "number",
+    "required": true,
+    "desc": "Quantity of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Unit",
+    "type": "text",
+    "required": true,
+    "desc": "Unit of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Rate",
+    "type": "number",
+    "required": true,
+    "desc": "Rate of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Amount",
+    "type": "number",
+    "required": true,
+    "desc": "Amount of the items"
+  },
+  {
+    "section": "Items Information",
+    "Feild": "Serial Numbers",
+    "type": "text",
+    "required": true,
+    "desc": "Serial Numbers of the items"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Taxable Value",
+    "type": "number",
+    "required": true,
+    "desc": "Taxable Value of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Rate",
+    "type": "number",
+    "required": true,
+    "desc": "Rate of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Amount",
+    "type": "number",
+    "required": true,
+    "desc": "Amount of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Rate",
+    "type": "number",
+    "required": true,
+    "desc": "Rate of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Amount",
+    "type": "number",
+    "required": true,
+    "desc": "Amount of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Total Tax",
+    "type": "number",
+    "required": true,
+    "desc": "Total Tax of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Grand Total",
+    "type": "number",
+    "required": true,
+    "desc": "Grand Total of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Amount In Words",
+    "type": "text",
+    "required": true,
+    "desc": "Amount In Words of the totals"
+  },
+  {
+    "section": "Totals Information",
+    "Feild": "Tax In Words",
+    "type": "text",
+    "required": true,
+    "desc": "Tax In Words of the totals"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Account Holder",
+    "type": "text",
+    "required": true,
+    "desc": "Account Holder of the bank details"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Bank Name",
+    "type": "text",
+    "required": true,
+    "desc": "Bank Name of the bank details"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Account No",
+    "type": "text",
+    "required": true,
+    "desc": "Account No of the bank details"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Branch",
+    "type": "text",
+    "required": true,
+    "desc": "Branch of the bank details"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Ifsc",
+    "type": "text",
+    "required": true,
+    "desc": "Ifsc of the bank details"
+  },
+  {
+    "section": "Bank Details Information",
+    "Feild": "Swift Code",
+    "type": "text",
+    "required": true,
+    "desc": "Swift Code of the bank details"
+  },
+  {
+    "section": "Declarations Information",
+    "Feild": "Declarations",
+    "type": "text",
+    "required": true,
+    "desc": "Declarations of the declarations"
+  },
+  {
+    "section": "Pan Information",
+    "Feild": "Pan",
+    "type": "text",
+    "required": true,
+    "desc": "Pan of the pan"
+  }
+]

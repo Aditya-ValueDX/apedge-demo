@@ -1,0 +1,136 @@
+[
+  {
+    "id": "APEDGE001",
+    "companyName": "ValueDX",
+    "email": "valuedx@gmail.com",
+    "contact": "7485123690",
+    "password": "1234",
+    "role": "Administrator"
+  },
+  {
+    "id": "APEDGE002",
+    "companyName": "AutomationEdge",
+    "email": "automation@gmail.com",
+    "contact": "7485961230",
+    "password": "1234",
+    "role": "Administrator"
+  },
+  {
+    "id": "APEDGE001C001",
+    "companyName": "ValueDX",
+    "email": "user@gmail.com",
+    "contact": "7485961230",
+    "password": "1234",
+    "role": "User",
+    "adminId": "APEDGE001",
+    "name": "Smith"
+  },
+  {
+    "id": "APEDGE004",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "Aditya Sapate",
+    "email": "Aditya@example.com",
+    "role": "Administrator"
+  },
+  {
+    "id": "CID101",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "clerk A",
+    "email": "clerka@example.com",
+    "role": "User",
+    "adminId": "APEDGE004"
+  },
+  {
+    "id": "CID102",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "clerk B",
+    "email": "clerkb@example.com",
+    "role": "User",
+    "adminId": "APEDGE004"
+  },
+  {
+    "id": "CID103",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "clerk C",
+    "email": "clerkc@example.com",
+    "role": "User",
+    "adminId": "APEDGE004"
+  },
+  {
+    "id": "APEDGE005",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "Renuka Deshmukh",
+    "email": "renuka@example.com",
+    "role": "Administrator"
+  },
+  {
+    "id": "CID201",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "name": "clerk X",
+    "email": "clerkx@example.com",
+    "role": "User",
+    "adminId": "APEDGE005"
+  },
+  {
+    "id": "CID202",
+    "name": "clerk Y",
+    "companyName": "ValueDX",
+    "contact": "7485961230",
+    "password": "1234",
+    "email": "clerky@example.com",
+    "role": "User",
+    "adminId": "APEDGE005"
+  },
+  {
+    "id": "AP005C3",
+    "companyName": "ValueDX",
+    "email": "renukadeshmuxczxckh50@gmail.com",
+    "contact": "09067423103",
+    "password": "1234",
+    "role": "User",
+    "adminId": "APEDGE005",
+    "name": "Renuka Deshmukh"
+  },
+  {
+    "id": "APEDGE005C004",
+    "companyName": "ValueDX",
+    "email": "renukadesxzchmukh50@gmail.com",
+    "contact": "09067423103",
+    "password": "1234",
+    "role": "User",
+    "adminId": "APEDGE005",
+    "name": "Renuka Deshmukh"
+  },
+  {
+    "id": "APEDGE001C002",
+    "companyName": "ValueDX",
+    "email": "aditya@gmail.com",
+    "contact": "7485961230",
+    "password": "1234",
+    "role": "User",
+    "adminId": "APEDGE001",
+    "name": "Aditya Sapate"
+  },
+  {
+    "id": "APEDGE001C003",
+    "companyName": "ValueDX",
+    "email": "john@gmail.com",
+    "contact": "8574961478",
+    "password": "1234",
+    "role": "User",
+    "adminId": "APEDGE001",
+    "name": "John"
+  }
+]

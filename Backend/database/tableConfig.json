@@ -1,0 +1,906 @@
+{
+  "APEDGE005": [
+    {
+      "Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Name of the buyer"
+      },
+      "Udyam No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Udyam No of the seller"
+      },
+      "Address": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Address of the buyer"
+      },
+      "Gstin": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Gstin of the buyer"
+      },
+      "State": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State of the buyer"
+      },
+      "State Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State Code of the buyer"
+      },
+      "Email": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Email of the seller"
+      },
+      "Invoice No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice No of the invoice"
+      },
+      "Eway Bill No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Eway Bill No of the invoice"
+      },
+      "Invoice Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice Date of the invoice"
+      },
+      "Payment Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Payment Terms of the invoice"
+      },
+      "Order No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Order No of the invoice"
+      },
+      "Order Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Order Date of the invoice"
+      },
+      "Reference User": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Reference User of the invoice"
+      },
+      "Contact Person": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Contact Person of the buyer"
+      },
+      "Vehicle No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Vehicle No of the buyer"
+      },
+      "Delivery Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Delivery Terms of the buyer"
+      },
+      "Description": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Description of the items"
+      },
+      "Hsn": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Hsn of the items"
+      },
+      "Quantity": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Quantity of the items"
+      },
+      "Unit": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Unit of the items"
+      },
+      "Rate": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Rate of the totals"
+      },
+      "Amount": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Amount of the totals"
+      },
+      "Serial Numbers": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Serial Numbers of the items"
+      },
+      "Taxable Value": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Taxable Value of the totals"
+      },
+      "Total Tax": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Total Tax of the totals"
+      },
+      "Grand Total": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Grand Total of the totals"
+      },
+      "Amount In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Amount In Words of the totals"
+      },
+      "Tax In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Tax In Words of the totals"
+      },
+      "Account Holder": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account Holder of the bank details"
+      },
+      "Bank Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Bank Name of the bank details"
+      },
+      "Account No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account No of the bank details"
+      },
+      "Branch": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Branch of the bank details"
+      },
+      "Ifsc": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Ifsc of the bank details"
+      },
+      "Swift Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Swift Code of the bank details"
+      },
+      "Declarations": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Declarations of the declarations"
+      },
+      "Pan": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Pan of the pan"
+      }
+    }
+  ],
+  "APEDGE001": [
+    {
+      "Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Name of the buyer"
+      },
+      "Udyam No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Udyam No of the seller"
+      },
+      "Address": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Address of the buyer"
+      },
+      "Gstin": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Gstin of the buyer"
+      },
+      "State": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State of the buyer"
+      },
+      "State Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State Code of the buyer"
+      },
+      "Email": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Email of the seller"
+      },
+      "Invoice No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice No of the invoice"
+      },
+      "Invoice Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice Date of the invoice"
+      },
+      "Payment Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Payment Terms of the invoice"
+      },
+      "Eway Bill No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Eway Bill No of the invoice"
+      },
+      "Order No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Order No of the invoice"
+      },
+      "Order Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Order Date of the invoice"
+      },
+      "Reference User": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Reference User of the invoice"
+      },
+      "Contact Person": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Contact Person of the buyer"
+      },
+      "Vehicle No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Vehicle No of the buyer"
+      },
+      "Delivery Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Delivery Terms of the buyer"
+      },
+      "Description": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Description of the items"
+      },
+      "Hsn": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Hsn of the items"
+      },
+      "Quantity": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Quantity of the items"
+      },
+      "Unit": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Unit of the items"
+      },
+      "Rate": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Rate of the totals"
+      },
+      "Amount": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Amount of the totals"
+      },
+      "Serial Numbers": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Serial Numbers of the items"
+      },
+      "Taxable Value": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Taxable Value of the totals"
+      },
+      "Total Tax": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Total Tax of the totals"
+      },
+      "Grand Total": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Grand Total of the totals"
+      },
+      "Amount In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Amount In Words of the totals"
+      },
+      "Tax In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Tax In Words of the totals"
+      },
+      "Account Holder": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account Holder of the bank details"
+      },
+      "Bank Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Bank Name of the bank details"
+      },
+      "Account No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account No of the bank details"
+      },
+      "Branch": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Branch of the bank details"
+      },
+      "Ifsc": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Ifsc of the bank details"
+      },
+      "Swift Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Swift Code of the bank details"
+      },
+      "Declarations": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Declarations of the declarations"
+      },
+      "Pan": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Pan of the pan"
+      }
+    }
+  ],
+  "APEDGE997182": [
+    {
+      "Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Name of the buyer"
+      },
+      "Udyam No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Udyam No of the seller"
+      },
+      "Address": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Address of the buyer"
+      },
+      "Gstin": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Gstin of the buyer"
+      },
+      "State": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State of the buyer"
+      },
+      "State Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State Code of the buyer"
+      },
+      "Email": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Email of the seller"
+      },
+      "Invoice No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice No of the invoice"
+      },
+      "Eway Bill No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Eway Bill No of the invoice"
+      },
+      "Invoice Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice Date of the invoice"
+      },
+      "Payment Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Payment Terms of the invoice"
+      },
+      "Order No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Order No of the invoice"
+      },
+      "Order Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Order Date of the invoice"
+      },
+      "Reference User": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Reference User of the invoice"
+      },
+      "Contact Person": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Contact Person of the buyer"
+      },
+      "Vehicle No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Vehicle No of the buyer"
+      },
+      "Delivery Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Delivery Terms of the buyer"
+      },
+      "Description": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Description of the items"
+      },
+      "Hsn": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Hsn of the items"
+      },
+      "Quantity": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Quantity of the items"
+      },
+      "Unit": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Unit of the items"
+      },
+      "Rate": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Rate of the totals"
+      },
+      "Amount": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Amount of the totals"
+      },
+      "Serial Numbers": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Serial Numbers of the items"
+      },
+      "Taxable Value": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Taxable Value of the totals"
+      },
+      "Total Tax": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Total Tax of the totals"
+      },
+      "Grand Total": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Grand Total of the totals"
+      },
+      "Amount In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Amount In Words of the totals"
+      },
+      "Tax In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Tax In Words of the totals"
+      },
+      "Account Holder": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account Holder of the bank details"
+      },
+      "Bank Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Bank Name of the bank details"
+      },
+      "Account No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account No of the bank details"
+      },
+      "Branch": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Branch of the bank details"
+      },
+      "Ifsc": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Ifsc of the bank details"
+      },
+      "Swift Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Swift Code of the bank details"
+      },
+      "Declarations": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Declarations of the declarations"
+      },
+      "Pan": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Pan of the pan"
+      }
+    }
+  ],
+  "APEDGE091223": [
+    {
+      "Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Name of the buyer"
+      },
+      "Udyam No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Udyam No of the seller"
+      },
+      "Address": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Address of the buyer"
+      },
+      "Gstin": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Gstin of the buyer"
+      },
+      "State": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State of the buyer"
+      },
+      "State Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "State Code of the buyer"
+      },
+      "Email": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Email of the seller"
+      },
+      "Invoice No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice No of the invoice"
+      },
+      "Eway Bill No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Eway Bill No of the invoice"
+      },
+      "Invoice Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Invoice Date of the invoice"
+      },
+      "Payment Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Payment Terms of the invoice"
+      },
+      "Order No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Order No of the invoice"
+      },
+      "Order Date": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Order Date of the invoice"
+      },
+      "Reference User": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Reference User of the invoice"
+      },
+      "Contact Person": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Contact Person of the buyer"
+      },
+      "Vehicle No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Vehicle No of the buyer"
+      },
+      "Delivery Terms": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Delivery Terms of the buyer"
+      },
+      "Description": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Description of the items"
+      },
+      "Hsn": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Hsn of the items"
+      },
+      "Quantity": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Quantity of the items"
+      },
+      "Unit": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Unit of the items"
+      },
+      "Rate": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Rate of the totals"
+      },
+      "Amount": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Amount of the totals"
+      },
+      "Serial Numbers": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Serial Numbers of the items"
+      },
+      "Taxable Value": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Taxable Value of the totals"
+      },
+      "Total Tax": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Total Tax of the totals"
+      },
+      "Grand Total": {
+        "type": "number",
+        "required": true,
+        "parent": "",
+        "desc": "Grand Total of the totals"
+      },
+      "Amount In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Amount In Words of the totals"
+      },
+      "Tax In Words": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Tax In Words of the totals"
+      },
+      "Account Holder": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account Holder of the bank details"
+      },
+      "Bank Name": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Bank Name of the bank details"
+      },
+      "Account No": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Account No of the bank details"
+      },
+      "Branch": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Branch of the bank details"
+      },
+      "Ifsc": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Ifsc of the bank details"
+      },
+      "Swift Code": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Swift Code of the bank details"
+      },
+      "Declarations": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Declarations of the declarations"
+      },
+      "Pan": {
+        "type": "text",
+        "required": true,
+        "parent": "",
+        "desc": "Pan of the pan"
+      }
+    }
+  ]
+}

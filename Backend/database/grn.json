@@ -1,0 +1,48 @@
+[
+  {
+    "grnId": "GRN001",
+    "poId": "PO001",
+    "receivedBy": "John Doe",
+    "date": "2025-06-04",
+    "transportMode": "Motor Vehicle",
+    "remarks": "Received with minor scratches",
+    "items": [
+      {
+        "name": "Dell Docking Station WD19s 180W C-Type",
+        "description": "Model: 7XT6T | Part: 7XT6T/ 138BP | HSN/SAC: 84716060",
+        "hsnsac": "84716060",
+        "quantity": 9,
+        "rate": 10350,
+        "per": "No",
+        "amount": 93150
+      },
+      {
+        "name": "Mouse M170 Wireless - Logitech",
+        "description": "Serial Numbers Added As Annexure to This Invoice",
+        "hsnsac": "84716060",
+        "quantity": 40,
+        "rate": 600,
+        "per": "No",
+        "amount": 24000
+      }
+    ]
+  },
+  {
+    "grnId": "GRN002",
+    "poId": "PO002",
+    "receivedBy": "G Giri",
+    "date": "2025-06-02",
+    "transportMode": "Motor Vehicle",
+    "remarks": "Partial delivery, checked on arrival.",
+    "items": [
+      {
+        "name": "Dell Docking Station WD19s 180W C-Type",
+        "quantity": 10
+      },
+      {
+        "name": "Mouse M170 Wireless - Logitech",
+        "quantity": 35
+      }
+    ]
+  }
+]

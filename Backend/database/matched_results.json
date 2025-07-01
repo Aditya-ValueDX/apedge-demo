@@ -1,0 +1,102 @@
+[
+  {
+    "invoiceId": "APEDGEDOC001",
+    "invoice": {
+      "id": "APEDGEDOC001",
+      "filePath": "uploads/undefined/APEDGEDOC001.pdf",
+      "fileName": "APEDGEDOC001.pdf",
+      "companyId": "APEDGE001",
+      "clerkId": "APEDGE001",
+      "poId": "PO001",
+      "status": "verified",
+      "date": "2025-06-16T06:04:02.675Z",
+      "vendor": "ABC Pvt Ltd",
+      "dueDate": "2025-06-30",
+      "currency": "INR",
+      "paymentTerms": "Net 30",
+      "discount": 500,
+      "taxRate": 18,
+      "items": [
+        {
+          "name": "Item B",
+          "quantity": 10,
+          "rate": 1500
+        },
+        {
+          "name": "Item C",
+          "quantity": 2,
+          "rate": 2000
+        },
+        {
+          "name": "Item A",
+          "quantity": 5,
+          "rate": 1000
+        }
+      ],
+      "logs": [
+        {
+          "action": "uploaded",
+          "by": "APEDGE001",
+          "at": "2025-06-16T06:04:02.675Z"
+        },
+        {
+          "action": "verified",
+          "at": "2025-06-16T10:47:55.002Z"
+        }
+      ]
+    },
+    "po": {
+      "id": "PO001",
+      "vendor": "ABC Pvt Ltd",
+      "date": "2024-06-01",
+      "dueDate": "2024-06-20",
+      "currency": "INR",
+      "paymentTerms": "Net 15",
+      "discount": 0,
+      "taxRate": 18,
+      "items": [
+        {
+          "name": "Item A",
+          "quantity": 5,
+          "rate": 1000
+        },
+        {
+          "name": "Item B",
+          "quantity": 10,
+          "rate": 1500
+        },
+        {
+          "name": "Item C",
+          "quantity": 16,
+          "rate": 15000
+        }
+      ]
+    },
+    "grn": {
+      "grnId": "GRN001",
+      "poId": "PO001",
+      "receivedBy": "John Doe",
+      "date": "2024-06-03",
+      "transportMode": "Road",
+      "remarks": "All goods received in good condition",
+      "items": [
+        {
+          "name": "Item B",
+          "quantity": 10
+        },
+        {
+          "name": "Item A",
+          "quantity": 5
+        },
+        {
+          "name": "Item C",
+          "quantity": 25
+        }
+      ]
+    },
+    "overriddenFields": [],
+    "rejectionComments": {},
+    "verifiedBy": "APEDGE001",
+    "verifiedAt": "2025-06-18T06:19:35.438Z"
+  }
+]

@@ -1,0 +1,211 @@
+
+  .invoice-struct-def {
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+
+  .section-heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+        .save-btn:disabled,
+.generate-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+  .field-table-wrapper {
+    overflow-x: auto;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 8px;
+  }
+    td:has([data-rbd-drag-handle-draggable-id]) {
+  cursor: grab;
+}
+
+
+  .field-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .field-table th, .field-table td {
+    border: 1px solid #e0e0e0;
+    padding: 6px 10px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  .field-table th {
+    background: linear-gradient(to right, #eef2f5, #f9fbfd);
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .field-table tbody tr:hover {
+    background-color: #f7faff;
+  }
+
+  .field-table input[type="text"],
+  .field-table select {
+    width: 100%;
+    height: 100% !important;
+    font-size: 13px !important;
+    padding: 2px 4px !important;
+    box-sizing: border-box !important;
+    background-color: transparent;
+    border: none !important;
+    outline: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .field-table input:focus,
+  .field-table select:focus {
+    background: #f9f9f9;
+    /*border: 1px solid #007bff !important; */
+    border-radius: 4px;
+  }
+
+  .field-table input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #007bff;
+  }
+
+  .add-btn, .save-btn, .generate-btn, .reset-btn {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .add-btn:hover, .save-btn:hover, .generate-btn:hover, .reset-btn:hover {
+    background: #1a252f;
+  }
+
+  .generate-btn {
+    background: #27ae60;
+  }
+
+  .reset-btn {
+    background: rgb(209, 59, 17);
+  }
+
+  .delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .delete-btn:hover {
+    background: #c0392b;
+  }
+
+  .footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+tr:hover {
+  cursor: grab;
+}
+tr:active {
+  cursor: grabbing !important;
+}
+
+td:has([data-rbd-drag-handle-draggable-id]) {
+  cursor: grab !important;
+}
+
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dialog-box {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .dialog-actions button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .field-table th:nth-child(1),
+  .field-table td:nth-child(1) {
+    width: 40px !important;
+    text-align: center !important;
+  }
+
+  .field-table th:nth-child(2),
+  .field-table td:nth-child(2) {
+    width: 160px !important;
+  }
+
+  .field-table th:nth-child(3),
+  .field-table td:nth-child(3) {
+    width: 100px !important;
+  }
+
+  .field-table th:nth-child(4),
+  .field-table td:nth-child(4) {
+    width: 140px !important;
+  }
+
+  .field-table th:nth-child(5),
+  .field-table td:nth-child(5) {
+    width: 240px !important;
+  }
+
+  .field-table th:nth-child(6),
+  .field-table td:nth-child(6) {
+    width: 40px !important;
+    text-align: center !important;
+  }
+
+  .field-table th:nth-child(7),
+  .field-table td:nth-child(7) {
+    width: 40px !important;
+    text-align: center !important;
+  }
+    .field-table th:nth-child(8),
+  .field-table td:nth-child(8) {
+    width: 40px !important;
+    text-align: center !important;
+  }
