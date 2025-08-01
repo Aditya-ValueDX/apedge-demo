@@ -1,82 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
+*{
+    font-family: 'Poppins', sans-serif !important;
 }
-
-.tabs {
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin: 3rem auto;
-    padding: 12px 14px;
-    background: rgba(250, 250, 250, 0.6);
-    backdrop-filter: blur(14px);
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    width: fit-content;
-    max-width: 90%;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.tabs::-webkit-scrollbar {
-    display: none;
-}
-
-.tabs button {
-    position: relative;
-    padding: 12px 28px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #4b5563;
-    background: transparent;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    z-index: 1;
-}
-
-/* Divider line between buttons */
-.tabs button:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: -8px;
-    top: 20%;
-    height: 60%;
-    width: 1.5px;
-    background: linear-gradient(to bottom, #b3b6bd, #8b8e92);
-    opacity: 0.6;
-}
-
-.tabs button:hover {
-    color: #4338ca;
-    background: rgba(99, 102, 241, 0.08);
-}
-
-.tabs button.active {
-    color: white;
-}
-
-.tabs button.active::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #6366f1, #4f46e5);
-    border-radius: 12px;
-    z-index: -1;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
-    animation: pillSlide 0.3s ease forwards;
-}
-
 .card {
     background: white;
     border: 1px solid #e5e7eb;
@@ -85,33 +9,6 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     margin-bottom: 20px;
     transition: all 0.3s ease;
-}
-
-.card:not(:last-child) {
-    border-bottom: 3px solid #f3f4f6;
-    /* Divider between cards */
-}
-
-.divider {
-    margin: 2rem auto;
-    width: 100%;
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, #e5e7eb, #f3f4f6);
-    opacity: 0.9;
-    border-radius: 999px;
-}
-
-@keyframes pillSlide {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .card-header {
@@ -123,10 +20,8 @@ body {
 .card-header h4::before {
     content: '';
     display: inline-block;
-    width: 1px;
     height: 10px;
     border-radius: 50%;
-    margin-right: 8px;
 }
 
 .card-header h3:has(:contains("Invoice"))::before {
@@ -261,12 +156,14 @@ body {
 
 .compare-table td:nth-child(2),
 .compare-table th:nth-child(2) {
+    font-weight: 600;
     width: 140px;
 }
 
 .compare-table td:nth-child(3),
 .compare-table th:nth-child(3) {
     width: 140px;
+    font-weight: 600;
 }
 
 .compare-table td:nth-child(4),
@@ -388,14 +285,6 @@ body {
     background-color: #e8e8e8;
 }
 
-.section-wrapper {
-    margin-bottom: 32px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
 .compare-table {
     width: 100%;
     border-collapse: collapse;
@@ -418,33 +307,25 @@ body {
     background-color: #f0fdf4;
 }
 
-/* .match {
-    color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 2px 5px;
-    margin: 10px 5px !important;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: #004e7f;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-} */
-
 .match {
     display: inline-block;
     margin-top: 4px;
     padding: 2px 10px;
     font-size: 10px;
-    color: #2563eb; /* Tailwind Blue-600 */
-    background-color: #e4effe; /* Tailwind Blue-100 */
+    color: #2563eb;
+    /* Tailwind Blue-600 */
+    background-color: #e4effe;
+    /* Tailwind Blue-100 */
     border-radius: 15px;
     font-weight: 500;
 }
 
 /* Style for the "Matched At Row" row */
 .metadata-row {
-    background-color: #e0f7fa; /* Light cyan background */
-    color: #28e9d3;            /* Dark teal text */
+    background-color: #e0f7fa;
+    /* Light cyan background */
+    color: #28e9d3;
+    /* Dark teal text */
     font-weight: bold;
     font-size: 0.95em;
     text-align: center;
@@ -480,7 +361,6 @@ textarea {
     margin-top: 4px;
     resize: vertical;
 }
-
 
 .accepted {
     font-weight: 600;
@@ -646,18 +526,17 @@ button:hover {
 
 
 .match-page {
-    margin: 20px 20px 20px 70px;
+    margin: 20px;
     padding: 10px 20px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 .match-grid {
     display: flex;
     gap: 15px;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 .card {
@@ -850,13 +729,455 @@ button {
     justify-content: center;
 }
 
+/* Add this new style for the character count message */
+.char-count-message {
+    font-size: 11px;
+    color: #6b7280; /* Neutral gray */
+    text-align: center; /* Align to the right below the textarea */
+    margin-top: 4px; /* Small margin above it */
+    padding-right: 2px; /* Small padding to match textarea's internal spacing if desired */
+}
+
+/* Style for when the character limit is reached */
+.char-count-message.limit-reached {
+    color: #ef4444; /* Red color for warning */
+    font-weight: bold;
+}
+
+/* Ensure textarea margin/alignment from previous step is correct */
 .reason-box {
     margin-top: 6px;
+    margin-left: auto; /* For centering */
+    margin-right: auto; /* For centering */
     padding: 6px 8px;
     font-size: 13px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    width: 90%;
-    max-width: 180px;
+    width: 98%; /* Adjusted for less side margin */
+    max-width: 200px; /* Adjusted to allow wider textarea */
     resize: vertical;
+    display: block;
+    box-sizing: border-box;
+}
+/* ===== NEW/MODIFIED STYLES FOR ACCORDION ===== */
+.section-wrapper {
+    margin-bottom: 15px;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.section-wrapper:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+    color: #343a40;
+}
+
+.section-title:hover {
+    background-color: #e9ecef;
+}
+
+.section-title-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* NEW: Container for right side of header */
+.section-title-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.accordion-icon {
+    display: inline-block;
+    border: solid #343a40;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+    /* Points down */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    /* Smooth, bouncy transition */
+}
+
+.accordion-icon.open {
+    transform: rotate(-135deg);
+    /* Points up when open */
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out, padding 0.5s ease;
+    padding: 0 15px;
+    background: #ffffff;
+    border-top: 1px solid transparent;
+}
+
+.collapsible-content.open {
+    max-height: 2500px;
+    /* Large value to accommodate any content */
+    padding: 20px 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ===== ICON STYLING (using solid icons) ===== */
+.match-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Increased gap */
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.match-count .icon {
+    vertical-align: middle;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.match-count .match-icon {
+    color: #22c55e;
+}
+
+.match-count .mismatch-icon {
+    color: #ef4444;
+}
+
+.match-count .partial-match-icon {
+    color: #f59e0b;
+}
+
+.match-count .missing-icon {
+    color: #6b7280;
+}
+
+/* ===== NEW "ACCEPT ALL" BUTTON STYLES ===== */
+
+.global-actions-header {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+.accept-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #10b981;
+    background-color: #f0fdf4;
+    /* Light green */
+    color: #059669;
+    /* Dark green */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.accept-all-btn:hover {
+    background-color: #d1fae5;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.accept-all-btn svg {
+    font-size: 15px;
+}
+
+/* Style for the bigger, global button */
+.accept-all-btn.global {
+    padding: 8px 16px;
+    font-size: 14px;
+    background: linear-gradient(to right, #10b981, #059669);
+    color: white;
+    border: none;
+}
+
+.accept-all-btn.global:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Make sure the main action buttons at the bottom have a distinct style */
+.action-buttons button.approve {
+    background: linear-gradient(to right, #2ecc71, #28b463);
+}
+
+.action-buttons button.reject {
+    background: linear-gradient(to right, #e74c3c, #cb4335);
+}
+
+/* --- Keep all existing styles --- */
+/* --- Add or Modify the following styles at the end of the file --- */
+
+/* ===== NEW STYLES FOR ITEMIZED TABLE ===== */
+
+.itemized-table td,
+.itemized-table th {
+    vertical-align: middle;
+}
+
+/* Style for the rowspan SR NO cell */
+.itemized-table td[rowspan] {
+    font-weight: 600;
+    color: #374151;
+    background-color: #f9fafb !important;
+    text-align: center;
+    border-right: 1px solid #e5e7eb;
+}
+
+/* Style for the "Matched At Row" metadata row */
+.metadata-row {
+    background-color: #f3f4f6 !important;
+    /* A light, neutral grey */
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.metadata-row td {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.action-cell {
+    text-align: center; /* This helps center inline content, but for blocks, auto margin is better */
+    width: 150px;
+}
+/* Container for inline Accept/Reject buttons */
+.action-buttons-inline {
+    display: flex;
+    gap: 8px;
+    justify-content: center; /* This centers the buttons horizontally */
+    align-items: center;
+}
+
+/* Styling for the small buttons inside the table */
+.action-buttons-inline .approve {
+    background-color: #10b981;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.action-buttons-inline .reject {
+    background-color: #ef4444;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Style for the green "Accepted" text */
+.accepted {
+    font-weight: 600;
+    color: #16a34a;
+    /* Darker green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.compare-table tr.srno-group-end {
+    border-bottom: 2px solid #d1d5db;
+    /* Dark border between item groups */
+}
+
+.compare-table td.match-col {
+    gap: 6px;
+}
+
+@media (max-width: 768px) {
+    .landing-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand-name {
+        margin-bottom: 10px;
+    }
+
+    .landing-nav button {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 8px 15px;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-image {
+        order: -1;
+        /* Move image above text on small screens */
+        margin-bottom: 20px;
+    }
+
+    .features-section {
+        padding: 40px 20px;
+        grid-template-columns: 1fr;
+        /* Stack features vertically */
+    }
+
+    .match-page {
+        margin: 15px;
+        padding: 10px;
+        max-width: unset;
+        /* Remove max-width for better filling */
+    }
+
+    .match-grid {
+        flex-direction: column;
+    }
+
+    .card {
+        min-width: unset;
+        /* Allow cards to take full width */
+        max-height: unset;
+        /* Allow content to expand */
+    }
+
+    .modal {
+        width: 95%;
+        padding: 1rem;
+        max-height: 90vh;
+        /* Re-evaluate max height for smaller screens */
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-header button {
+        font-size: 1.5rem;
+    }
+
+    .modal-controls {
+        flex-wrap: wrap;
+        /* Allow zoom controls to wrap */
+        gap: 0.5rem;
+    }
+
+    /* Table specific responsive adjustments */
+    .comparison-table-container {
+        padding: 5px;
+    }
+
+    .comparison-table-scroll {
+        min-width: 600px;
+        /* Adjust min-width if necessary, or rely solely on overflow */
+    }
+
+    .compare-table th,
+    .compare-table td {
+        padding: 8px 10px;
+        /* Reduce padding in table cells */
+        font-size: 13px;
+        /* Slightly smaller font for table */
+    }
+
+    .table-edit-input,
+    .reason-box {
+        width: 98%;
+        /* Fuller width for inputs */
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .global-actions-header {
+        justify-content: center;
+        /* Center "Accept All" button */
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .landing-header {
+        padding: 15px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .landing-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .landing-nav button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .match-page {
+        margin: 10px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .table-edit-input,
+    .reason-box {
+        font-size: 12px;
+    }
 }

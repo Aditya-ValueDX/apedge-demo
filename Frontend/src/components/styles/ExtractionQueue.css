@@ -6,6 +6,10 @@
   --primary-700: #4338ca;
   --primary-50: #eef2ff;
   --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  /* Added for gradients */
+  --primary-300: #a5b4fc;
+  /* Added for gradients */
 
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -31,40 +35,38 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  /* Added */
 
   /* Border Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  /* Added */
 
   /* Shadows */
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-
-  /* Typography */
-  --font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  /* Added */
 }
 
 
 /* ===== BASE CONTAINER ===== */
 .processing-queue {
-  padding: var(--spacing-xl) var(--spacing-xl);
-  font-family: var(--font-family);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-  /* Fixed height instead of max-height */
-  height: 85vh;
+  max-height: 80vh;
   color: var(--gray-800);
-  margin: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) 4rem;
+  margin: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) 2rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   box-shadow: var(--shadow-xl);
   position: relative;
-  overflow: hidden;
-  /* Enable flexbox for proper layout control */
   display: flex;
   flex-direction: column;
 }
@@ -74,62 +76,189 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 6px;
+  right: 6px;
   height: 4px;
   background: linear-gradient(90deg, var(--primary-600), var(--success-500), var(--warning-500));
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  /* This line is key */
 }
 
 /* ===== HEADER STYLING ===== */
 .queue-header {
+  display: flex;
+  justify-content: space-between;
+  /* Spread title and button */
+  align-items: center;
+  /* Vertically center both */
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
   color: var(--gray-900);
   letter-spacing: -0.025em;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
   position: relative;
   flex-shrink: 0;
-  /* Prevent header from shrinking */
+}
+
+.queue-title {
+  flex: 1;
+  /* Takes available space on left */
 }
 
 .queue-header::after {
   content: '';
-  flex: 1;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--primary-600) 0%, transparent 100%);
   border-radius: 1px;
 }
 
-/* ===== FILTERS SECTION ===== */
-.filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-  padding: var(--spacing-xl);
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
+/* Filter Button (unchanged) */
+.filter-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
-  position: relative;
-  flex-shrink: 0;
-  /* Prevent filters from shrinking */
 }
 
-.filters::before {
-  content: '';
-  position: absolute;
+
+.filter-toggle-btn:hover {
+  background-color: var(--primary-700);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.filter-toggle-btn svg {
+  transition: transform 0.2s ease;
+}
+
+
+/* ===== MODAL OVERLAY for Advanced Filters ===== */
+.modal-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-200), transparent);
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Dark semi-transparent background */
+  backdrop-filter: blur(4px);
+  /* Subtle blur effect */
+  z-index: 999;
+  /* Below the modal but above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+/* ===== ADVANCED FILTER PANEL ===== */
+.advanced-filter-panel {
+  background: linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--gray-200);
+  z-index: 1000;
+  width: 90%;
+  max-width: 800px;
+  animation: scaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Added animation */
+  /* MODIFIED: Make panel a flex container to manage scrolling area */
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.advanced-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--gray-200);
+  flex-shrink: 0;
+  /* MODIFIED: Prevent header from shrinking */
+}
+
+.advanced-filter-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.advanced-filter-header .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  transition: color 0.2s ease;
+}
+
+.advanced-filter-header .close-btn:hover {
+  color: var(--gray-700);
+}
+
+.advanced-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg) var(--spacing-xl);
+  /* Increased horizontal gap */
+  margin-bottom: var(--spacing-xl);
+  /* MODIFIED: Make grid scrollable */
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: var(--spacing-md);
+  /* Space for scrollbar */
+}
+
+/* MODIFIED: Added custom scrollbar for advanced filters */
+.advanced-filters-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.advanced-filters-grid::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: 4px;
+}
+
+.advanced-filters-grid::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+.advanced-filters-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
 
 .filter-group {
   display: flex;
@@ -138,34 +267,42 @@
 }
 
 .filter-group label {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--gray-700);
   letter-spacing: 0.025em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  display: flex;
+  /* For icon alignment */
+  align-items: center;
+  gap: 0.5rem;
+  /* Space between icon and text */
 }
 
 .filter-group input,
 .filter-group select {
-  font-family: var(--font-family);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--gray-300);
+  border: 1px solid var(--gray-300);
   background: white;
   color: var(--gray-800);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  width: 100%;
+  /* Ensure full width */
+  box-shadow: var(--shadow-sm);
+  /* Subtle shadow for inputs */
 }
 
 .filter-group input:focus,
 .filter-group select:focus {
   outline: none;
   border-color: var(--primary-600);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), var(--shadow-md);
+  /* Enhanced focus shadow */
   transform: translateY(-1px);
+  /* Slight lift on focus */
 }
 
 .filter-group input::placeholder {
@@ -173,61 +310,136 @@
   font-weight: 400;
 }
 
-/* Input with datalist styling */
-.input-select-wrapper {
-  position: relative;
+.advanced-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-200);
+  flex-shrink: 0;
+  /* MODIFIED: Prevent actions from shrinking */
 }
 
-.input-select-wrapper input[list] {
-  width: 100%;
-  padding-right: 2.5rem;
-}
-
-.dropdown-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gray-400);
-  pointer-events: none;
-  font-size: 0.75rem;
-}
-
-.clear-btn {
-  align-self: end;
-  background: linear-gradient(135deg, var(--error-500), var(--error-600));
-  color: white;
-  font-weight: 600;
+.advanced-filter-actions .clear-btn {
+  background: var(--gray-200);
+  color: var(--gray-700);
+  box-shadow: none;
   padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  /* Consistent padding */
+  font-size: 0.9rem;
+  /* Consistent font size */
+}
+
+.advanced-filter-actions .clear-btn:hover {
+  background: var(--gray-300);
+  color: var(--gray-800);
+  transform: none;
+  box-shadow: none;
+}
+
+.advanced-filter-actions .apply-btn {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
 
-.clear-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.clear-btn:hover {
-  transform: translateY(-2px);
+.advanced-filter-actions .apply-btn:hover {
+  background: var(--primary-700);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
-.clear-btn:hover::before {
-  left: 100%;
+
+/* --- Active Filters Display --- */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  /* Added subtle shadow */
 }
+
+.active-filters-label {
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-right: var(--spacing-sm);
+  font-size: 0.85rem;
+  /* Consistent font size */
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary-100);
+  color: var(--primary-700);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  border: 1px solid var(--primary-200);
+  box-shadow: var(--shadow-sm);
+  /* Subtle shadow for tags */
+}
+
+.filter-tag button {
+  background: none;
+  border: none;
+  color: var(--primary-700);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.filter-tag button:hover {
+  color: var(--error-500);
+}
+
+.clear-all-tag {
+  background-color: var(--error-500);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  /* Subtle shadow */
+}
+
+.clear-all-tag:hover {
+  background-color: var(--error-600);
+}
+
 
 /* ===== TABLE STYLING ===== */
 .table-container {
@@ -235,16 +447,20 @@
   border: 1px solid var(--gray-200);
   box-shadow: var(--shadow-lg);
   background: white;
-  /* Remove fixed max-height and make it flexible */
   flex: 1;
-  overflow-y: auto;
-  min-height: 230px;
-  /* Minimum height to ensure usability */
+  /* MODIFIED: Enable both vertical and horizontal scrolling on the container */
+  overflow: auto;
+  max-height: 400px;
+  /* Adjusted max height */
+  margin-top: var(--spacing-md);
+  /* Add margin top to separate from filters */
 }
 
 /* Custom scrollbar */
 .table-container::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
+  /* Height for horizontal scrollbar */
 }
 
 .table-container::-webkit-scrollbar-track {
@@ -287,6 +503,8 @@
   user-select: none;
   transition: all 0.2s ease;
   position: relative;
+  /* MODIFIED: Prevent header content from wrapping */
+  white-space: nowrap;
 }
 
 .queue-table th:hover {
@@ -309,6 +527,16 @@
   transform: scaleX(1);
 }
 
+.queue-table th,
+.queue-table td {
+  border: 1px solid var(--gray-200);
+}
+
+.queue-table {
+  border: 1px solid var(--gray-300);
+}
+
+
 .queue-table td {
   padding: 1rem 0.75rem;
   border-bottom: 1px solid var(--gray-200);
@@ -325,19 +553,72 @@
   background: linear-gradient(135deg, var(--primary-50), rgba(79, 70, 229, 0.02));
 }
 
-/* .queue-table tbody tr:hover::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--primary-600);
-} */
-
 .queue-table tbody tr:nth-child(even) {
   background: rgba(249, 250, 251, 0.5);
 }
+
+/* --- Column Filters in Header (New Row) --- */
+.queue-table .th-content {
+  display: flex;
+  flex-direction: column;
+  /* Stack header text and filter input */
+  align-items: flex-start;
+  /* Align content to the left */
+  gap: 5px;
+  /* Space between text and input */
+  width: 100%;
+}
+
+.queue-table .th-content>div:first-child {
+  /* This targets the div containing the icon and column name */
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: space-between;
+  /* Push sort arrow to the right if needed */
+  width: 100%;
+}
+
+.queue-table .th-content .column-filter-row {
+  /* New row for filter input */
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* MODIFIED: Removed redundant margin-top, as parent 'gap' handles spacing */
+}
+
+.queue-table .th-content .column-filter-row input,
+.queue-table .th-content .column-filter-row select {
+  width: 100%;
+  padding: 0.4rem 0.6rem 0.4rem 1.8rem;
+  /* Left padding for icon */
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  background-color: white;
+  color: var(--gray-700);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  /* Inset shadow for depth */
+}
+
+.queue-table .th-content .column-filter-row input:focus,
+.queue-table .th-content .column-filter-row select:focus {
+  outline: none;
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  /* Enhanced focus shadow */
+}
+
+.queue-table .th-content .column-filter-row .lucide {
+  /* For Search icon */
+  position: absolute;
+  left: 8px;
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
 
 /* ===== STATUS TRACKING ===== */
 .status-tracker {
@@ -439,8 +720,8 @@
   transform: translateX(-50%) translateY(-2px);
 }
 
-/* ===== STATUS TAGS ===== */
-.status-tag {
+/* ===== STATUS BADGES ===== */
+.status-badge {
   display: inline-flex;
   align-items: center;
   padding: 0.375rem 0.75rem;
@@ -451,53 +732,8 @@
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
-}
-
-.status-tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.status-tag:hover::before {
-  left: 100%;
-}
-
-.status-tag.uploaded {
-  background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
-  color: var(--primary-700);
-  border: 1px solid var(--primary-300);
-}
-
-.status-tag.extracted,
-.status-tag.Extraction.Done {
-  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-  color: #065f46;
-  border: 1px solid #86efac;
-}
-
-.status-tag.reconciled {
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  color: #92400e;
-  border: 1px solid #fbbf24;
-}
-
-.status-tag.verified,
-.status-tag.Approved {
-  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-  color: var(--success-600);
-  border: 1px solid var(--success-500);
-}
-
-.status-tag.matched {
-  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
-  color: var(--primary-700);
-  border: 1px solid var(--primary-400);
+  white-space: nowrap;
+  /* Prevent text wrapping */
 }
 
 /* ===== ACTION BUTTONS ===== */
@@ -547,9 +783,8 @@
   align-items: center;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   flex-shrink: 0;
-  /* Prevent pagination from shrinking */
 }
 
 .pagination button {
@@ -606,54 +841,82 @@
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .processing-queue {
-    height: 80vh;
-    /* Slightly smaller on medium screens */
+    min-height: 80vh;
     margin: var(--spacing-md);
     padding: var(--spacing-xl);
   }
 
-  .filters {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-md);
-  }
+  /* Filters grid adjusts automatically due to auto-fit */
 }
 
 @media (max-width: 768px) {
-   .processing-queue {
-    height: 90vh; /* Use more screen real estate on mobile */
+  .processing-queue {
+    min-height: 90vh;
     padding: var(--spacing-lg);
   }
 
   .queue-header {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    /* Slightly smaller header */
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .filters {
+  .filter-toggle-btn {
+    margin-left: 0;
+    /* Remove auto-margin on smaller screens */
+    width: 100%;
+    /* Make it full width */
+    justify-content: center;
+  }
+
+  /* Advanced filter panel in overlay mode handles its positioning */
+  .advanced-filter-panel {
+    width: 95%;
+    /* More width on small screens */
     padding: var(--spacing-lg);
   }
 
-  .table-container {
-    overflow-x: auto;
+  .advanced-filters-grid {
+    grid-template-columns: 1fr;
+    /* Stack filters vertically */
   }
 
+  /* MODIFIED: Horizontal scrolling is now handled by the base class */
   .queue-table {
-    min-width: 800px;
+    min-width: 900px;
+    /* Ensure table is scrollable if content overflows */
   }
 
- .pagination {
+  .pagination {
     padding: var(--spacing-md);
   }
 }
 
 @media (max-width: 480px) {
   .processing-queue {
-    height: 95vh; /* Maximum height on small screens */
+    min-height: 95vh;
     margin: var(--spacing-sm);
     padding: var(--spacing-md);
   }
+
+  .queue-table {
+    min-width: 700px;
+    /* Even smaller min-width for very small screens */
+  }
+
+  .queue-table th,
+  .queue-table td {
+    padding: 0.8rem 0.5rem;
+    /* Reduce cell padding */
+  }
+
+  .pagination button {
+    padding: 0.5rem 0.6rem;
+    min-width: 38px;
+  }
 }
+
 /* ===== LOADING STATES ===== */
 .loading-shimmer {
   background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
@@ -716,7 +979,13 @@
 /* Focus visible for keyboard navigation */
 .action-btn:focus-visible,
 .pagination button:focus-visible,
-.clear-btn:focus-visible {
+.clear-btn:focus-visible,
+.filter-toggle-btn:focus-visible,
+/* Added for advanced filter button */
+.advanced-filter-actions .apply-btn:focus-visible
+
+/* Added for apply button */
+  {
   outline: 2px solid var(--primary-600);
   outline-offset: 2px;
 }
@@ -728,9 +997,13 @@
     border: 1px solid var(--gray-300);
   }
 
-  .filters,
+  /* These will be handled by the modal-overlay if the popup is visible */
+  .modal-overlay,
   .pagination,
-  .action-btn {
+  .action-btn,
+  .filter-toggle-btn,
+  .advanced-filter-panel,
+  .active-filters {
     display: none;
   }
 
@@ -738,4 +1011,95 @@
     max-height: none;
     overflow: visible;
   }
+}
+
+/* --- Tab Navigation --- */
+.tab-navigation {
+    display: flex;
+    justify-content: center; /* Align tabs to the center */
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-200);
+    gap: 0; /* Remove gap between buttons */
+    position: relative;
+}
+
+.tab-navigation .tab-button {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0; /* Rounded top corners */
+    margin-bottom: -1px; /* Overlap border */
+}
+
+.tab-navigation .tab-button:hover:not(.active) {
+    color: var(--primary-600);
+    background-color: var(--primary-50);
+}
+
+.tab-navigation .tab-button.active {
+    color: var(--primary-700);
+    border-bottom: 3px solid var(--primary-600); /* Highlight active tab */
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+    z-index: 1; /* Bring active tab to front */
+}
+
+.tab-navigation .tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.tab-navigation .tab-button.active::after {
+    background-color: var(--primary-600);
+}
+
+
+/* Styles for the circular status count badge */
+.status-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px; /* Ensures a minimum circular size */
+  height: 24px;
+  border-radius: 50%; /* Makes it circular */
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 8px; /* Space from the tab text */
+  transition: all 0.2s ease;
+  padding: 0 6px; /* Adjust padding for numbers */
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+  color: white; /* Default text color for the badge */
+}
+
+/* Default (inactive) background color for all status counts */
+.tab-button .status-count {
+  background-color: var(--gray-400); /* A neutral gray for inactive tabs */
+}
+
+/* Specific background colors for active tab counts */
+.tab-button.active:nth-child(1) .status-count { /* Targets the 'Pending' tab's count when active */
+  background-color: var(--warning-500); /* Yellow for pending */
+}
+
+.tab-button.active:nth-child(2) .status-count { /* Targets the 'Approved' tab's count when active */
+  background-color: var(--success-500); /* Green for approved */
+}
+
+.tab-button.active:nth-child(3) .status-count { /* Targets the 'Rejected' tab's count when active */
+  background-color: var(--error-500); /* Red for rejected */
 }

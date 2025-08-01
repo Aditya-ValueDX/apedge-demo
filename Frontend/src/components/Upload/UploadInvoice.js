@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Upload, X, FileText, Image, AlertCircle, CheckCircle, Eye } from 'lucide-react';
 import '../styles/UploadInvoice.css';
+import { BASE_URL } from '../../config'; // Import BASE_URL
 
 const UploadInvoice = () => {
   const [files, setFiles] = useState([]);
@@ -128,11 +129,11 @@ const UploadInvoice = () => {
           });
         }, 200);
 
-        const uploadRes = await axios.post('http://localhost:5000/api/upload/', formData);
+        const uploadRes = await axios.post(`${BASE_URL}}/api/upload/`, formData);
         const uploadedInvoice = uploadRes.data.invoice;
 
         // Send basic OCR metadata after upload
-        await axios.post(`http://localhost:5000/api/ocr/${uploadedInvoice.id}`, {
+        await axios.post(`${BASE_URL}/api/ocr/${uploadedInvoice.id}`, {
           invoiceNumber: uploadedInvoice.id,
           invoiceDate: new Date().toISOString().split('T')[0],
           dueDate: new Date().toISOString().split('T')[0],

@@ -66,7 +66,7 @@
     "companyId": "APEDGE001",
     "clerkId": "APEDGE001",
     "poId": "1",
-    "status": "ocr_done",
+    "status": "reconciled",
     "date": "2025-06-17T12:34:43.673Z",
     "logs": [
       {
@@ -86,6 +86,11 @@
       {
         "action": "draft_saved",
         "at": "2025-07-01T06:59:09.303Z"
+      },
+      {
+        "action": "reconciled",
+        "at": "2025-07-03T07:05:51.146Z",
+        "reason": ""
       }
     ]
   },
@@ -95,7 +100,7 @@
     "fileName": "APEDGEDOC003.pdf",
     "companyId": "APEDGE001",
     "clerkId": "APEDGE001",
-    "poId": "5",
+    "poId": "PO003",
     "status": "ocr_done",
     "date": "2025-06-17T12:37:05.641Z",
     "vendor": "SmartFlow Pvt Ltd",
@@ -127,100 +132,6 @@
     ]
   },
   {
-    "id": "APEDGEDOC004",
-    "filePath": "uploads/undefined/APEDGEDOC001.pdf",
-    "fileName": "APEDGEDOC001.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "poId": "PO001",
-    "status": "ocr_done",
-    "date": "2025-06-16T06:04:02.675Z",
-    "vendor": "NISH SYSTEMS AND SOLUTIONS",
-    "gstin": "29AAFCN8253K1ZE",
-    "buyerOrderNo": "850675",
-    "dispatchDocNo": "KASGK/4193",
-    "deliveryNoteDate": "2025-03-24",
-    "termsOfDelivery": "Within 1 Week",
-    "deliveryNote": "6587428451",
-    "modeOfTransport": "Motor Vehicle",
-    "billOfLading": "KASGK/4193",
-    "placeOfSupply": "Bengaluru",
-    "dueDate": "2025-06-30",
-    "currency": "INR",
-    "paymentTerms": "Net 30",
-    "discount": 500,
-    "taxRate": 18,
-    "items": [
-      {
-        "name": "Dell Docking Station WD19s 180W C-Type",
-        "description": "Model: 7XT6T | Part: 7XT6T/ 138BP | HSN/SAC: 84716060",
-        "hsnsac": "84716060",
-        "quantity": 10,
-        "rate": 10350,
-        "per": "No",
-        "amount": 103500
-      },
-      {
-        "name": "Mouse M170 Wireless - Logitech",
-        "description": "Serial Numbers Added As Annexure to This Invoice",
-        "hsnsac": "84716060",
-        "quantity": 40,
-        "rate": 600,
-        "per": "No",
-        "amount": 24000
-      }
-    ],
-    "taxBreakup": {
-      "cgstRate": 9,
-      "sgstRate": 9,
-      "cgstAmount": 11475,
-      "sgstAmount": 11475,
-      "taxableAmount": 127500
-    },
-    "totalAmount": 150450,
-    "amountInWords": "One Lakh Fifty Thousand Four Hundred Fifty Only",
-    "remarks": "Goods once sold will not be taken back or exchanged.",
-    "bankDetails": {
-      "accountHolder": "NISH SYSTEMS AND SOLUTIONS",
-      "bankName": "Canara Bank",
-      "accountNo": "04151040000577",
-      "ifscCode": "CNRB0000415",
-      "branch": "NR Colony, Bangalore",
-      "swiftCode": "CNRBINBBLFD"
-    },
-    "signature": {
-      "signedBy": "G Giri",
-      "signedOn": "2025-03-24"
-    },
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-06-16T06:04:02.675Z"
-      },
-      {
-        "action": "verified",
-        "at": "2025-06-16T10:47:55.002Z"
-      },
-      {
-        "action": "verified",
-        "by": "APEDGE001",
-        "at": "2025-06-18T06:19:35.439Z",
-        "reason": "all accepted"
-      },
-      {
-        "action": "verified",
-        "by": "APEDGE001",
-        "at": "2025-06-18T06:32:28.419Z",
-        "reason": "all accepted"
-      },
-      {
-        "action": "draft_saved",
-        "at": "2025-07-01T07:31:55.135Z"
-      }
-    ]
-  },
-  {
     "id": "APEDGEDOC005",
     "filePath": "uploads/undefined/APEDGEDOC005.pdf",
     "fileName": "APEDGEDOC005.pdf",
@@ -242,6 +153,15 @@
       {
         "action": "draft_saved",
         "at": "2025-07-01T08:47:29.052Z"
+      },
+      {
+        "action": "reconciled",
+        "at": "2025-07-07T09:12:55.246Z",
+        "reason": ""
+      },
+      {
+        "action": "draft_saved",
+        "at": "2025-07-31T11:31:54.370Z"
       }
     ]
   },
@@ -252,7 +172,9 @@
     "companyId": "APEDGE001",
     "clerkId": "APEDGE001",
     "status": "ocr_done",
+    "poId": "PO006",
     "date": "2025-06-18T09:43:43.298Z",
+    "vendor": "NISHI SYSTEMS AND SOLUTIONS",
     "logs": [
       {
         "action": "uploaded",
@@ -275,7 +197,7 @@
     "fileName": "APEDGEDOC007.pdf",
     "companyId": "APEDGE001",
     "clerkId": "APEDGE001",
-    "status": "ocr_done",
+    "status": "reconciled",
     "date": "2025-06-18T09:43:59.924Z",
     "logs": [
       {
@@ -291,10 +213,6 @@
         "action": "reconciled",
         "at": "2025-06-20T09:00:04.317Z",
         "reason": ""
-      },
-      {
-        "action": "draft_saved",
-        "at": "2025-07-01T10:25:48.457Z"
       }
     ]
   },
@@ -344,74 +262,6 @@
     "grnId": "GRN002"
   },
   {
-    "id": "1",
-    "filePath": "uploads/undefined/INVOICE_1.pdf",
-    "fileName": "INVOICE_1.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-06-27T09:33:33.677Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-06-27T09:33:33.677Z"
-      },
-      {
-        "action": "draft_saved",
-        "at": "2025-06-27T09:33:33.705Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC001",
-    "filePath": "uploads/undefined/APEDGEDOC001.pdf",
-    "fileName": "APEDGEDOC001.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T06:35:19.384Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T06:35:19.385Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC002",
-    "filePath": "uploads/undefined/APEDGEDOC002.pdf",
-    "fileName": "APEDGEDOC002.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T06:59:09.284Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T06:59:09.284Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC003",
-    "filePath": "uploads/undefined/APEDGEDOC003.pdf",
-    "fileName": "APEDGEDOC003.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T07:05:22.337Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T07:05:22.337Z"
-      }
-    ]
-  },
-  {
     "id": "APEDGEDOC004",
     "filePath": "uploads/undefined/APEDGEDOC004.pdf",
     "fileName": "APEDGEDOC004.pdf",
@@ -424,54 +274,6 @@
         "action": "uploaded",
         "by": "APEDGE001",
         "at": "2025-07-01T07:31:55.112Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC005",
-    "filePath": "uploads/undefined/APEDGEDOC005.png",
-    "fileName": "APEDGEDOC005.png",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T08:47:29.040Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T08:47:29.040Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC006",
-    "filePath": "uploads/undefined/APEDGEDOC006.png",
-    "fileName": "APEDGEDOC006.png",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T09:53:08.787Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T09:53:08.787Z"
-      }
-    ]
-  },
-  {
-    "id": "APEDGEDOC007",
-    "filePath": "uploads/undefined/APEDGEDOC007.pdf",
-    "fileName": "APEDGEDOC007.pdf",
-    "companyId": "APEDGE001",
-    "clerkId": "APEDGE001",
-    "status": "ocr_done",
-    "date": "2025-07-01T10:25:48.427Z",
-    "logs": [
-      {
-        "action": "uploaded",
-        "by": "APEDGE001",
-        "at": "2025-07-01T10:25:48.427Z"
       }
     ]
   }

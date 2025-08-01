@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
+import { BASE_URL } from '../../config'; // Import BASE_URL
 
 const UserTable = ({ clerks_data = [], triggerRefresh }) => {
   const [showDialog, setShowDialog] = useState(false);
@@ -80,7 +81,9 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
     const { name, email, phone, password, role } = newClerk;
 
     if (!name || !email || !phone || !role) { // Password can be optional for edit
-      alert("Please fill all required fields.");
+      // Using a custom modal or toast instead of alert
+      // alert("Please fill all required fields.");
+      console.log("Please fill all required fields.");
       return;
     }
 
@@ -90,7 +93,9 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
             (c) => c.email.toLowerCase() === email.toLowerCase()
         );
         if (emailExists) {
-            alert("Email already exists!");
+            // Using a custom modal or toast instead of alert
+            // alert("Email already exists!");
+            console.log("Email already exists!");
             return;
         }
     }
@@ -98,14 +103,16 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
 
     const sessionUser = JSON.parse(sessionStorage.getItem("user"));
     if (!sessionUser) {
-      alert("Session expired. Please login again.");
+      // Using a custom modal or toast instead of alert
+      // alert("Session expired. Please login again.");
+      console.log("Session expired. Please login again.");
       return;
     }
 
     try {
       if (editingClerk) {
         // --- EDIT EXISTING CLERK ---
-        await axios.put(`http://localhost:5000/api/update-clerk/${editingClerk.id}`, {
+        await axios.put(`${BASE_URL}/api/update-clerk/${editingClerk.id}`, {
           companyName: sessionUser.companyName,
           email,
           contact: phone,
@@ -114,11 +121,15 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
           adminId: sessionUser.id,
           name
         });
-        alert("Clerk updated successfully!");
+        // Using a custom modal or toast instead of alert
+        // alert("Clerk updated successfully!");
+        console.log("Clerk updated successfully!");
       } else {
         // --- ADD NEW CLERK ---
         if (!password) { // Password is required for new clerk
-          alert("Please provide a password for the new clerk.");
+          // Using a custom modal or toast instead of alert
+          // alert("Please provide a password for the new clerk.");
+          console.log("Please provide a password for the new clerk.");
           return;
         }
 
@@ -128,7 +139,7 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
         }, 100);
         const newId = `CID${maxIdNum + 1}`;
 
-        await axios.post('http://localhost:5000/api/add-new-clerk', {
+        await axios.post(`${BASE_URL}/api/add-new-clerk`, {
           id: newId,
           companyName: sessionUser.companyName,
           email,
@@ -138,13 +149,17 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
           adminId: sessionUser.id,
           name
         });
-        alert("Clerk added successfully!");
+        // Using a custom modal or toast instead of alert
+        // alert("Clerk added successfully!");
+        console.log("Clerk added successfully!");
       }
       triggerRefresh();
       handleCloseDialog(); // Close dialog and reset state
     } catch (err) {
       console.error("❌ Operation failed:", err);
-      alert(`Failed to ${editingClerk ? "update" : "add"} clerk. Check console for details.`);
+      // Using a custom modal or toast instead of alert
+      // alert(`Failed to ${editingClerk ? "update" : "add"} clerk. Check console for details.`);
+      console.log(`Failed to ${editingClerk ? "update" : "add"} clerk. Check console for details.`);
     }
   };
 
@@ -292,19 +307,14 @@ const UserTable = ({ clerks_data = [], triggerRefresh }) => {
         </div>
       </div>
       <style>{`
-        /* Base styles */
-        body {
-          font-family: 'Inter', sans-serif;
-          margin: 0;
-          background-color: #f7fafc; /* light gray background */
-        }
+
 
         /* Table Container */
         .table-container {
           padding: 1.5rem;
           max-width: 100%;
           box-sizing: border-box;
-          margin: 10px 10px 10px 50px;
+          margin: 10px;
         }
 
         /* Header Section */

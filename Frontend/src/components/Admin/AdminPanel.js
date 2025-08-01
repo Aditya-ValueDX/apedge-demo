@@ -4,8 +4,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AdminDashboard from "./AdminDashboard";
 import UserTable from "./UserTable";
 import InvoiceStrucDef from "./InvoiceStrucDef2";
-import InvoiceTablePreview from "./InvoiceTablePreview";
 import axios from 'axios';
+import { BASE_URL } from '../../config'; // Import BASE_URL
 
 const AdminPanel = ({triggerSidebarRefresh}) => {
   const adminData = JSON.parse(sessionStorage.getItem("user"));
@@ -24,7 +24,7 @@ const AdminPanel = ({triggerSidebarRefresh}) => {
     const admin = JSON.parse(sessionStorage.getItem("user"));
     if (!admin || admin.role !== "Administrator") return;
     
-    axios.get('http://localhost:5000/api/users')
+    axios.get(`${BASE_URL}/api/users`)
     .then(res => {
       const clerks = res.data.filter(
         u => u.role === "User" && u.adminId === admin.id

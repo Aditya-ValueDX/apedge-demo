@@ -1,87 +1,5 @@
 [
   {
-    "invoiceId": "APEDGEDOC001",
-    "ocrData": {
-      "invoiceNumber": "APEDGEDOC001",
-      "date": "2025-06-16",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
-      "poNumber": "1",
-      "challanNumber": "CH123456",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
-      },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
-      },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-16",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
-      },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Amount in words placeholder"
-    },
-    "ocr_confidence": 94,
-    "timestamp": "2025-07-01T06:35:19.396Z"
-  },
-  {
     "invoiceId": "APEDGEDOC002",
     "ocrData": {
       "invoiceNumber": "APEDGEDOC002",
@@ -89,6 +7,10 @@
       "vendor": "ABC Pvt Ltd",
       "amount": "25000",
       "gst": "18%",
+      "extractedBy": "APEDGE001",
+      "invoiceDate": "2025-07-01",
+      "dueDate": "2025-07-01",
+      "amountInWords": "Amount in words placeholder",
       "items": [
         {
           "name": "Item A",
@@ -99,339 +21,160 @@
           "name": "Item B",
           "quantity": 10,
           "rate": 1500
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
-      "amountInWords": "Amount in words placeholder"
+      ]
     },
     "ocr_confidence": 94,
     "timestamp": "2025-07-01T06:59:09.302Z"
   },
   {
-    "invoiceId": "APEDGEDOC003",
-    "ocrData": {
-      "invoiceNumber": "APEDGEDOC003",
-      "date": "2025-06-17",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
-      "poNumber": "5",
-      "challanNumber": "CH123456",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
-      },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
-      },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-17",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
-      },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Amount in words placeholder"
-    },
-    "ocr_confidence": 92,
-    "timestamp": "2025-07-01T07:05:22.367Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC004",
-    "ocrData": {
-      "invoiceNumber": "APEDGEDOC004",
-      "date": "2025-06-18",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
-      "poNumber": "6",
-      "challanNumber": "CH123456",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
-      },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
-      },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-18",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
-      },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Amount in words placeholder"
-    },
-    "ocr_confidence": 97,
-    "timestamp": "2025-07-01T07:31:55.134Z"
-  },
-  {
     "invoiceId": "APEDGEDOC005",
     "ocrData": {
-      "Name": "Customer A",
-      "Udyam_No": "UDYAM-MH-0001234",
-      "Address": "Customer Address 1",
-      "Gstin": "29AAACZ1234Q1Z1",
-      "State": "Karnataka",
-      "State_Code": "29",
-      "Email": "customer@example.com",
-      "invoiceNumber": "APEDGEDOC005",
-      "Eway_Bill_No": "EWB12345678",
-      "Invoice_Date": 20250618,
-      "Payment_Terms": "Net 30",
-      "Order_No": "PO-78965",
-      "Order_Date": 20250617,
-      "Reference_User": "Rajesh Sharma",
-      "Contact_Person": "Mr. Singh",
-      "Vehicle_No": "MH12AB1234",
-      "Delivery_Terms": "Delivered at Site",
-      "Description": "Product A",
-      "Hsn": "1001",
-      "Quantity": 5,
-      "Unit": "pcs",
-      "Rate": 1000,
-      "Amount": 5900,
-      "Serial_Numbers": "SN1001, SN1002, SN1003, SN1004, SN1005",
-      "Taxable_Value": 5000,
-      "Total_Tax": 900,
-      "Grand_Total": 5900,
-      "Amount_In_Words": "Five Thousand Nine Hundred Rupees Only",
-      "Tax_In_Words": "Nine Hundred Rupees Only",
-      "Account_Holder": "Your Business Pvt Ltd",
-      "Bank_Name": "State Bank of India",
-      "Account_No": "1234567890",
-      "Branch": "Pune Main",
-      "Ifsc": "SBIN0001234",
-      "Swift_Code": "SBININBBXXX",
-      "Declarations": "Goods once sold will not be taken back.",
-      "Pan": "ABCDE1234F",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
+      "name": "Customer A",
+      "udyamNo": "UDYAM-MH-0001234",
+      "address": "Customer Address 1",
+      "gstin": "29AAACZ1234Q1Z1",
+      "state": "Karnataka",
+      "stateCode": "29",
+      "email": "customer@example.com",
+      "invoiceNo": "APEDGEDOC005",
+      "ewayBillNo": "EWB12345678",
+      "invoiceDate": "2025-07-31",
+      "paymentTerms": "Net 30",
+      "orderNo": "PO-78965",
+      "orderDate": "20250617",
+      "referenceUser": "Rajesh Sharma",
+      "contactPerson": "Mr. Singh",
+      "vehicleNo": "MH12AB1234",
+      "deliveryTerms": "Delivered at Site",
+      "amount": 5900,
+      "taxableValue": 5000,
+      "totalTax": 900,
+      "grandTotal": 5900,
+      "amountInWords": "Amount in words placeholder",
+      "taxInWords": "Nine Hundred Rupees Only",
+      "accountHolder": "Your Business Pvt Ltd",
+      "bankName": "State Bank of India",
+      "accountNo": "1234567890",
+      "branch": "Pune Main",
+      "ifsc": "SBIN0001234",
+      "swiftCode": "SBININBBXXX",
+      "declarations": "Goods once sold will not be taken back.",
+      "pan": "ABCDE1234F",
+      "dueDate": "2025-07-31",
       "extractedBy": "APEDGE001",
-      "amountInWords": "Amount in words placeholder"
+      "items": [
+        {
+          "description": "Product A",
+          "hsn": "1001",
+          "quantity": 5,
+          "unit": "pcs",
+          "rate": 1000,
+          "amount": 5900,
+          "serialNumbers": "SN1001, SN1002, SN1003, SN1004, SN1005"
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
+        }
+      ],
+      "invoiceNumber": "APEDGEDOC005"
     },
     "ocr_confidence": 94,
-    "timestamp": "2025-07-01T08:47:29.051Z"
+    "timestamp": "2025-07-31T11:31:54.369Z"
   },
   {
     "invoiceId": "APEDGEDOC006",
     "ocrData": {
-      "invoiceNumber": "APEDGEDOC006",
-      "date": "2025-06-18",
-      "vendor": "Bolt Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
+      "name": "Bloom Energy (India) Private Limited",
+      "udyamNo": "KL-03-0061061",
+      "address": "North Block, 3rd Floor, Rajajinagar ITPark, Plot No:1,2,3 & 4, Rajajinagar Industrial Estate, Bangalore-560044.",
+      "gstin": "29AABCI2936F1ZM",
+      "state": "Karnataka",
+      "stateCode": "29",
+      "email": "contactus@nishisspl.com",
+      "invoiceNo": "G184/24-25",
+      "ewayBillNo": "162074248511",
+      "invoiceDate": "2025-03-24",
+      "paymentTerms": "100% 30days Net From Our Invoice Date",
+      "orderNo": "805075",
+      "orderDate": "2025-03-20",
+      "referenceUser": "Mr. Manjunath B.S",
+      "contactPerson": "Mr. Sandeep S",
+      "vehicleNo": "KA05KV4193",
+      "deliveryTerms": "Within 1 Week",
+      "taxableValue": 127500,
+      "totalTax": 22950,
+      "grandTotal": 150450,
+      "amountInWords": null,
+      "taxInWords": null,
+      "accountHolder": null,
+      "bankName": null,
+      "accountNo": null,
+      "branch": null,
+      "ifsc": null,
+      "swiftCode": null,
+      "declarations": null,
+      "pan": null,
+      "extractedBy": "APEDGE001",
       "items": [
         {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
+          "description": "Dell Docking Station WD19s 180w C-Type",
+          "hsn": "84716060",
+          "quantity": 10,
+          "unit": "No.",
+          "rate": 10350,
+          "amount": 150450,
+          "serialNumbers": "1)J1F1164 2)D2F1164 3)32F1164 4)5ZC1164 5) H0F1164 6)79F1164 7)JXC1164 8)S2F1164 9) 62C1164 10)CVC1164"
+        },
+        {
+          "description": "Mouse M170 Wireless - Logitech",
+          "hsn": "84716060",
+          "quantity": 40,
+          "unit": "No.",
+          "rate": 600,
+          "amount": 24000,
+          "serialNumbers": "SN-M170-A, SN-M170-B"
+        },
+        {
+          "description": "USB-C to HDMI Adapter",
+          "hsn": "85444299",
           "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
+          "unit": "pcs",
+          "rate": 800,
+          "amount": 4000,
+          "serialNumbers": "ADAPT-001, ADAPT-002"
         }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
-      },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
-      },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-18",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
-      },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Amount in words placeholder"
+      ]
     },
-    "ocr_confidence": 92,
+    "ocr_confidence": 95,
     "timestamp": "2025-07-01T09:53:08.812Z"
   },
   {
     "invoiceId": "APEDGEDOC007",
     "ocrData": {
-      "invoiceNumber": "APEDGEDOC007",
+      "invoiceNumber": "INV-1750239839927",
       "date": "2025-06-18",
       "vendor": "SnapTech Pvt Ltd",
       "amount": "55000",
       "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
       "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-07-01",
-      "dueDate": "2025-07-01",
+      "invoiceDate": "2025-06-18",
+      "dueDate": "2025-06-18",
       "invoiceType": "GST",
       "paymentTerms": "Net 30",
       "billType": "Tax Invoice",
@@ -476,10 +219,39 @@
       "shippingCharges": 0,
       "roundOff": 0,
       "grandTotal": 5900,
-      "amountInWords": "Amount in words placeholder"
+      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
+      "items": [
+        {
+          "serial": 1,
+          "description": "Product A",
+          "hsn": "1001",
+          "itemCode": "SKU001",
+          "uom": "pcs",
+          "quantity": 5,
+          "rate": 1000,
+          "discount": 0,
+          "taxableValue": 5000,
+          "cgstRate": 9,
+          "cgstAmount": 450,
+          "sgstRate": 9,
+          "sgstAmount": 450,
+          "igstRate": 0,
+          "igstAmount": 0,
+          "total": 5900
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
+        }
+      ]
     },
     "ocr_confidence": 93,
-    "timestamp": "2025-07-01T10:25:48.456Z"
+    "timestamp": "2025-06-18T09:43:59.931Z"
   },
   {
     "invoiceId": "APEDGEDOC008",
@@ -523,6 +295,16 @@
         "ewayBillNumber": "EWB12345678",
         "lrNumber": "LR123456"
       },
+      "subtotal": 5000,
+      "totalDiscount": 0,
+      "totalCGST": 450,
+      "totalSGST": 450,
+      "totalIGST": 0,
+      "shippingCharges": 0,
+      "roundOff": 0,
+      "grandTotal": 5900,
+      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
+      "extractedBy": "APEDGE001",
       "items": [
         {
           "serial": 1,
@@ -541,18 +323,17 @@
           "igstRate": 0,
           "igstAmount": 0,
           "total": 5900
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
-      "extractedBy": "APEDGE001"
+      ]
     },
     "timestamp": "2025-06-19T07:56:52.161Z"
   },
@@ -564,26 +345,6 @@
       "vendor": "ABC Pvt Ltd",
       "amount": "25000",
       "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
       "extractedBy": "APEDGE001",
       "invoiceDate": "2025-06-27",
       "dueDate": "2025-06-27",
@@ -631,7 +392,36 @@
       "shippingCharges": 0,
       "roundOff": 0,
       "grandTotal": 5900,
-      "amountInWords": "Five Thousand Nine Hundred Rupees Only"
+      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
+      "items": [
+        {
+          "serial": 1,
+          "description": "Product A",
+          "hsn": "1001",
+          "itemCode": "SKU001",
+          "uom": "pcs",
+          "quantity": 5,
+          "rate": 1000,
+          "discount": 0,
+          "taxableValue": 5000,
+          "cgstRate": 9,
+          "cgstAmount": 450,
+          "sgstRate": 9,
+          "sgstAmount": 450,
+          "igstRate": 0,
+          "igstAmount": 0,
+          "total": 5900
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
+        }
+      ]
     },
     "ocr_confidence": 92,
     "timestamp": "2025-06-27T09:33:33.705Z"
@@ -639,24 +429,48 @@
   {
     "invoiceId": "APEDGEDOC001",
     "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC001",
-      "date": "2025-07-01",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
+      "name": "Tech Solutions Inc.",
+      "udyamNo": "UDYAM-KA-01-001122",
+      "address": "101, Tech Park, Electronic City, Bangalore - 560100",
+      "gstin": "29AAACT1234A1Z5",
+      "state": "Karnataka",
+      "stateCode": "29",
+      "email": "accounts@techsolutions.com",
+      "invoiceNo": "INV-APEDGEDOC001",
+      "ewayBillNo": "EWB9876543210",
+      "invoiceDate": "2025-07-01",
+      "paymentTerms": "Net 45",
+      "orderNo": "PO-TS-001",
+      "orderDate": "2025-06-20",
+      "referenceUser": "Priya Singh",
+      "contactPerson": "Mr. Kumar",
+      "vehicleNo": "KA01AB1234",
+      "deliveryTerms": "FOB Bangalore",
+      "taxableValue": 24000,
+      "totalTax": 4320,
+      "grandTotal": 28320,
+      "amountInWords": "Twenty-Eight Thousand Three Hundred Twenty Only",
+      "extractedBy": "APEDGE001",
       "items": [
         {
-          "name": "Item A",
-          "quantity": 5,
-          "rate": 1000
+          "description": "Cloud Hosting Services",
+          "hsn": "9983",
+          "quantity": 12,
+          "unit": "months",
+          "rate": 2000,
+          "amount": 28320,
+          "serialNumbers": "N/A"
         },
         {
-          "name": "Item B",
-          "quantity": 10,
-          "rate": 1500
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "extractedBy": "APEDGE001"
+      ]
     },
     "ocr_confidence": 91,
     "timestamp": "2025-07-01T06:35:19.386Z"
@@ -669,6 +483,7 @@
       "vendor": "ABC Pvt Ltd",
       "amount": "25000",
       "gst": "18%",
+      "extractedBy": "APEDGE001",
       "items": [
         {
           "name": "Item A",
@@ -679,9 +494,17 @@
           "name": "Item B",
           "quantity": 10,
           "rate": 1500
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "extractedBy": "APEDGE001"
+      ]
     },
     "ocr_confidence": 93,
     "timestamp": "2025-07-01T06:59:09.285Z"
@@ -689,77 +512,52 @@
   {
     "invoiceId": "APEDGEDOC003",
     "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC003",
-      "date": "2025-07-01",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
+      "name": "Global Logistics Ltd.",
+      "udyamNo": "UDYAM-MH-02-005566",
+      "address": "Logistics Hub, Andheri East, Mumbai - 400099",
+      "gstin": "27AAACG5678B1Z9",
+      "state": "Maharashtra",
+      "stateCode": "27",
+      "email": "billing@globallogistics.com",
+      "invoiceNo": "INV-APEDGEDOC003",
+      "ewayBillNo": "EWB1122334455",
+      "invoiceDate": "2025-07-01",
+      "paymentTerms": "Due on Receipt",
+      "orderNo": "PO-GL-003",
+      "orderDate": "2025-06-25",
+      "referenceUser": "Amit Patel",
+      "contactPerson": "Ms. Rao",
+      "vehicleNo": "MH02CD5678",
+      "deliveryTerms": "CIF Mumbai Port",
+      "amount": 35400,
+      "taxableValue": 30000,
+      "totalTax": 5400,
+      "grandTotal": 35400,
+      "amountInWords": "Thirty-Five Thousand Four Hundred Only",
+      "extractedBy": "APEDGE001",
       "items": [
         {
-          "name": "Item A",
-          "quantity": 5,
-          "rate": 1000
+          "description": "Freight Charges - International",
+          "hsn": "9965",
+          "quantity": 1,
+          "unit": "Shipment",
+          "rate": 30000,
+          "amount": 35400,
+          "serialNumbers": "CONTAINER-XYZ123"
         },
         {
-          "name": "Item B",
-          "quantity": 10,
-          "rate": 1500
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "extractedBy": "APEDGE001"
+      ]
     },
     "ocr_confidence": 96,
     "timestamp": "2025-07-01T07:05:22.338Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC004",
-    "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC004",
-      "date": "2025-07-01",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "name": "Item A",
-          "quantity": 5,
-          "rate": 1000
-        },
-        {
-          "name": "Item B",
-          "quantity": 10,
-          "rate": 1500
-        }
-      ],
-      "extractedBy": "APEDGE001"
-    },
-    "ocr_confidence": 94,
-    "timestamp": "2025-07-01T07:11:45.532Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC004",
-    "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC004",
-      "date": "2025-07-01",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "name": "Item A",
-          "quantity": 5,
-          "rate": 1000
-        },
-        {
-          "name": "Item B",
-          "quantity": 10,
-          "rate": 1500
-        }
-      ],
-      "extractedBy": "APEDGE001"
-    },
-    "ocr_confidence": 98,
-    "timestamp": "2025-07-01T07:31:55.113Z"
   },
   {
     "invoiceId": "APEDGEDOC005",
@@ -769,6 +567,7 @@
       "vendor": "ABC Pvt Ltd",
       "amount": "25000",
       "gst": "18%",
+      "extractedBy": "APEDGE001",
       "items": [
         {
           "name": "Item A",
@@ -779,20 +578,29 @@
           "name": "Item B",
           "quantity": 10,
           "rate": 1500
+        },
+        {
+          "description": "Generic Software License - Added 1",
+          "hsn": "852380",
+          "quantity": 1,
+          "unit": "license",
+          "rate": 5100,
+          "amount": 5100,
+          "serialNumbers": "GENERIC-LIC-X"
         }
-      ],
-      "extractedBy": "APEDGE001"
+      ]
     },
     "ocr_confidence": 99,
     "timestamp": "2025-07-01T08:47:29.042Z"
   },
   {
-    "invoiceId": "APEDGEDOC006",
+    "invoiceId": "APEDGEDOC005",
     "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC006",
-      "date": "2025-07-01",
+      "invoiceNumber": "INV-APEDGEDOC005",
+      "date": "2025-07-31",
       "vendor": "ABC Pvt Ltd",
       "amount": "25000",
+      "grandTotal": "25000",
       "gst": "18%",
       "items": [
         {
@@ -808,32 +616,7 @@
       ],
       "extractedBy": "APEDGE001"
     },
-    "ocr_confidence": 96,
-    "timestamp": "2025-07-01T09:53:08.788Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC007",
-    "ocrData": {
-      "invoiceNumber": "INV-APEDGEDOC007",
-      "date": "2025-07-01",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "name": "Item A",
-          "quantity": 5,
-          "rate": 1000
-        },
-        {
-          "name": "Item B",
-          "quantity": 10,
-          "rate": 1500
-        }
-      ],
-      "extractedBy": "APEDGE001"
-    },
-    "ocr_confidence": 99,
-    "timestamp": "2025-07-01T10:25:48.428Z"
+    "ocr_confidence": 97,
+    "timestamp": "2025-07-31T11:31:54.359Z"
   }
 ]

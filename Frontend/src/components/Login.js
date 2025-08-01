@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/global.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from '.././config'; // Import BASE_URL
 
 const Login = () => {
   const navigate = useNavigate();
-  const doesTableExist = (localStorage.getItem("table_config_generated") === "true");
-
+  // const doesTableExist = (localStorage.getItem("table_config_generated") === "true");
+  const [doesTableExist , setdoesTableExist] =  useState() ;
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -19,6 +20,31 @@ const Login = () => {
     setError('');
   };
 
+  const isGenerated = async (adminId) => {
+    try {
+      const res = await axios.get(
+        `${BASE_URL}/api/check-config/${adminId}`
+      );
+      
+      const adminExists = res.data.exists; // ✅ true or false
+      console.log(adminExists);
+debugger
+
+      return adminExists;
+    } catch (err) {
+    
+      console.error("❌ Admin check failed:", err);
+      return { exists: false };
+    }
+  };
+  // useEffect(() => {
+  //   const admin = JSON.parse(sessionStorage.getItem("user"));
+  //   if (!admin?.id) return;
+
+  //   isGenerated(admin.id).then((exists) => {
+  //     setdoesTableExist(exists);
+  //   });
+  // });
   const handleLogin = async () => {
     if (!form.email || !form.password) {
       setError('Please enter both email and password.');
@@ -28,14 +54,22 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/login/', {
+      const res = await axios.post(`${BASE_URL}/api/login/`, {
         email: form.email,
         password: form.password,
       });
-
+      
       const data = res.data;
       const role = data.role || 'user';
+    let tableExists;
 
+if (role === "Administrator") {
+  tableExists = await isGenerated(data.id);
+} else {
+  tableExists = await isGenerated(data.adminId);
+}
+setdoesTableExist(tableExists);
+debugger
       // Save to sessionStorage
       sessionStorage.setItem('user', JSON.stringify({
         name: data.name,
@@ -43,7 +77,8 @@ const Login = () => {
         companyName: data.companyName,
         email: data.email,
         role: role,
-        adminId: data.adminId
+        adminId: data.adminId,
+          TableConfigExists: tableExists
       }));
 
       // toast.success('Login successful!', {
@@ -55,9 +90,11 @@ const Login = () => {
   position: 'top-center',
   autoClose: 2000,
   onClose: () => {
-    if (doesTableExist) {
+    const tableStatus = JSON.parse(sessionStorage.getItem("user")).TableConfigExists;
+    debugger
+    if (tableStatus) {
       navigate('/dashboard');
-    } else if (!doesTableExist && role === "Administrator") {
+    } else if (!tableStatus && role === "Administrator") {
       navigate('/admin');
     } else {
       alert("🚫 Login Successful, but process not configured. Please contact your Manager.");

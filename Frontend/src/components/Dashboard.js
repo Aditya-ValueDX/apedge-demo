@@ -11,14 +11,16 @@ import {
 } from 'lucide-react';
 import { Bar, Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
+import { BASE_URL } from '.././config'; // Import BASE_URL
 
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
 
+  // Dashboard.js
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/dashboard-stats');
+        const res = await fetch(`${BASE_URL}/api/dashboard-stats`);
         const data = await res.json();
         console.log("📊 Dashboard API response:", data);
         setStats(data);
@@ -26,7 +28,6 @@ const Dashboard = () => {
         console.error('Failed to fetch stats:', err);
       }
     };
-
     fetchStats();
   }, []);
 
@@ -112,7 +113,7 @@ const Dashboard = () => {
       ))}
 
       <div className="dashboard-section visual-insights">
-        <h2 className="section-heading" style={{textAlign:'left'}}>Visual Insights</h2>
+        <h2 className="section-heading" style={{ textAlign: 'left' }}>Visual Insights</h2>
         <div className="chart-grid">
           <div className="chart-box">
             <h4>Invoice Distribution</h4>
@@ -176,7 +177,7 @@ const Dashboard = () => {
 
       <style>{`
         .dashboard {
-          padding: 30px 30px 30px 70px;
+          padding: 30px;
           font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
 

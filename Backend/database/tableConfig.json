@@ -229,225 +229,262 @@
     {
       "Name": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Name of the buyer"
+        "desc": "Name of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Udyam No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Udyam No of the seller"
+        "desc": "Udyam No of the seller",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Address": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Address of the buyer"
+        "desc": "Address of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Gstin": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Gstin of the buyer"
+        "desc": "Gstin of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "State": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "State of the buyer"
+        "desc": "State of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "State Code": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "State Code of the buyer"
+        "desc": "State Code of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Email": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Email of the seller"
+        "desc": "Email of the seller",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Invoice No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Invoice No of the invoice"
-      },
-      "Invoice Date": {
-        "type": "number",
-        "required": true,
-        "parent": "",
-        "desc": "Invoice Date of the invoice"
-      },
-      "Payment Terms": {
-        "type": "text",
-        "required": true,
-        "parent": "",
-        "desc": "Payment Terms of the invoice"
+        "desc": "Invoice No of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Eway Bill No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Eway Bill No of the invoice"
+        "desc": "Eway Bill No of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
+      },
+      "Invoice Date": {
+        "type": "number",
+        "parent": "",
+        "desc": "Invoice Date of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
+      },
+      "Payment Terms": {
+        "type": "text",
+        "parent": "",
+        "desc": "Payment Terms of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Order No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Order No of the invoice"
+        "desc": "Order No of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Order Date": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Order Date of the invoice"
+        "desc": "Order Date of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Reference User": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Reference User of the invoice"
+        "desc": "Reference User of the invoice",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Contact Person": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Contact Person of the buyer"
+        "desc": "Contact Person of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Vehicle No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Vehicle No of the buyer"
+        "desc": "Vehicle No of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Delivery Terms": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Delivery Terms of the buyer"
+        "desc": "Delivery Terms of the buyer",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Description": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Description of the items"
+        "desc": "Description of the items",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Hsn": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Hsn of the items"
+        "desc": "Hsn of the items",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Quantity": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Quantity of the items"
+        "desc": "Quantity of the items",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Unit": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Unit of the items"
+        "desc": "Unit of the items",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Rate": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Rate of the totals"
+        "desc": "Rate of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Amount": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Amount of the totals"
+        "desc": "Amount of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Serial Numbers": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Serial Numbers of the items"
+        "desc": "Serial Numbers of the items",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Taxable Value": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Taxable Value of the totals"
+        "desc": "Taxable Value of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Total Tax": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Total Tax of the totals"
+        "desc": "Total Tax of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Grand Total": {
         "type": "number",
-        "required": true,
         "parent": "",
-        "desc": "Grand Total of the totals"
+        "desc": "Grand Total of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Amount In Words": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Amount In Words of the totals"
+        "desc": "Amount In Words of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Tax In Words": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Tax In Words of the totals"
+        "desc": "Tax In Words of the totals",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Account Holder": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Account Holder of the bank details"
+        "desc": "Account Holder of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Bank Name": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Bank Name of the bank details"
+        "desc": "Bank Name of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Account No": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Account No of the bank details"
+        "desc": "Account No of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Branch": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Branch of the bank details"
+        "desc": "Branch of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Ifsc": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Ifsc of the bank details"
+        "desc": "Ifsc of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Swift Code": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Swift Code of the bank details"
+        "desc": "Swift Code of the bank details",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Declarations": {
         "type": "text",
-        "required": true,
         "parent": "",
-        "desc": "Declarations of the declarations"
+        "desc": "Declarations of the declarations",
+        "reconcile": "None",
+        "use_LLM": false
       },
       "Pan": {
-        "type": "text",
-        "required": true,
+        "type": "number",
         "parent": "",
-        "desc": "Pan of the pan"
+        "desc": "Pan of the pan",
+        "reconcile": "None",
+        "use_LLM": false
       }
     }
   ],

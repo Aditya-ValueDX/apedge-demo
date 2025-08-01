@@ -9,10 +9,7 @@ const app = express();
 const PORT = 5000;
 
 // === MIDDLEWARE ===
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -20,93 +17,93 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // === SETUP ===
 ['uploads', 'database', 'config'].forEach(dir => {
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
 });
 
 const USERS_FILE = './database/users.json';
 const readJSON = (file) => {
-    const fullPath = `database/${file}`;
-    if (!fs.existsSync(fullPath)) return [];
+  const fullPath = `database/${file}`;
+  if (!fs.existsSync(fullPath)) return [];
 
-    const content = fs.readFileSync(fullPath, 'utf-8');
-    if (!content.trim()) return []; // return empty array if file is blank
+  const content = fs.readFileSync(fullPath, 'utf-8');
+  if (!content.trim()) return []; // return empty array if file is blank
 
-    try {
-        return JSON.parse(content);
-    } catch (error) {
-        console.error(`❌ Error parsing ${file}:`, error.message);
-        return [];
-    }
+  try {
+    return JSON.parse(content);
+  } catch (error) {
+    console.error(`❌ Error parsing ${file}:`, error.message);
+    return [];
+  }
 };
 const writeJSON = (file, data) => fs.writeFileSync(`database/${file}`, JSON.stringify(data, null, 2));
 
 // === MULTER CONFIG ===
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        const companyId = req.body.companyId;
-        const dir = `uploads/${companyId}`;
-        fs.mkdirSync(dir, { recursive: true });
-        cb(null, dir);
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
+  destination: (req, file, cb) => {
+    const companyId = req.body.companyId;
+    const dir = `uploads/${companyId}`;
+    fs.mkdirSync(dir, { recursive: true });
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
 });
 const upload = multer({ storage });
 
 
 // === AUTH: SIGNUP ===
 function readUsers() {
-    if (!fs.existsSync(USERS_FILE)) fs.writeFileSync(USERS_FILE, '[]');
-    return JSON.parse(fs.readFileSync(USERS_FILE));
+  if (!fs.existsSync(USERS_FILE)) fs.writeFileSync(USERS_FILE, '[]');
+  return JSON.parse(fs.readFileSync(USERS_FILE));
 }
 
 function writeUsers(users) {
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
 }
 
 function generateNextUserId(users) {
-    if (users.length === 0) return 'APEDGE001';
-    const lastUser = users[users.length - 1];
-    const match = lastUser.id.match(/APEDGE(\d+)/);
-    const lastNum = match ? parseInt(match[1], 10) : 0;
-    return 'APEDGE' + (lastNum + 1).toString().padStart(3, '0');
+  if (users.length === 0) return 'APEDGE001';
+  const lastUser = users[users.length - 1];
+  const match = lastUser.id.match(/APEDGE(\d+)/);
+  const lastNum = match ? parseInt(match[1], 10) : 0;
+  return 'APEDGE' + (lastNum + 1).toString().padStart(3, '0');
 }
 
 app.post('/api/signup', (req, res) => {
-    const { companyName, email, contact, password } = req.body;
-    const role = 'Administrator';
+  const { companyName, email, contact, password } = req.body;
+  const role = 'Administrator';
 
-    if (!companyName || !email || !contact || !password) {
-        return res.status(400).json({ error: 'All fields are required' });
-    }
+  if (!companyName || !email || !contact || !password) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
 
-    const users = readUsers();
-    if (users.some(u => u.email === email)) {
-        return res.status(400).json({ error: 'Email already exists' });
-    }
+  const users = readUsers();
+  if (users.some(u => u.email === email)) {
+    return res.status(400).json({ error: 'Email already exists' });
+  }
 
-    const newUser = {
-        id: generateNextUserId(users),
-        companyName,
-        email,
-        contact,
-        password,
-        role
-    };
+  const newUser = {
+    id: generateNextUserId(users),
+    companyName,
+    email,
+    contact,
+    password,
+    role
+  };
 
-    users.push(newUser);
-    writeUsers(users);
-    res.json(newUser);
+  users.push(newUser);
+  writeUsers(users);
+  res.json(newUser);
 });
 
 // === AUTH: LOGIN ===
 app.post('/api/login', (req, res) => {
-    const { email, password } = req.body;
-    const users = readUsers();
-    const user = users.find(u => u.email === email && u.password === password);
-    if (!user) return res.status(401).json({ error: 'Invalid email or password' });
-    res.json(user);
+  const { email, password } = req.body;
+  const users = readUsers();
+  const user = users.find(u => u.email === email && u.password === password);
+  if (!user) return res.status(401).json({ error: 'Invalid email or password' });
+  res.json(user);
 });
 
 // === Fetch: Users ===
@@ -135,7 +132,7 @@ app.post('/api/add-new-clerk', (req, res) => {
 
   // 🔧 Generate Clerk ID like "AP005C3"
   function generateNewClerkId(users, adminId) {
-    
+
     const clerks = users.filter(u => u.role === "User" && u.adminId === adminId);
     return `${adminId}C00${clerks.length + 1}`;
   }
@@ -154,7 +151,7 @@ app.post('/api/add-new-clerk', (req, res) => {
   users.push(newUser);
   writeUsers(users);
 
-//   console.log("✅ Clerk added:", newUser);
+  //   console.log("✅ Clerk added:", newUser);
 
   res.json({
     success: true,
@@ -279,7 +276,7 @@ app.get('/api/check-config/:adminId', (req, res) => {
   const data = content ? JSON.parse(content) : {};
 
   const foundConfig = data[adminId];
-  console.log("foundConfig",foundConfig);
+  console.log("foundConfig", foundConfig);
 
   if (foundConfig && Array.isArray(foundConfig) && foundConfig.length > 0) {
     return res.json({
@@ -294,184 +291,199 @@ app.get('/api/check-config/:adminId', (req, res) => {
 
 // === INVOICE UPLOAD ===
 app.post('/api/upload', upload.single('invoice'), (req, res) => {
-    const { companyId, clerkId, poId } = req.body;
-    const file = req.file;
+  const { companyId, clerkId, poId } = req.body;
+  const file = req.file;
 
-    const invoices = readJSON('invoices.json');
-    const ocrResults = readJSON('ocr_results.json');
+  const invoices = readJSON('invoices.json');
+  const ocrResults = readJSON('ocr_results.json');
 
-    // === Generate APEDGE-style Invoice ID ===
-    let nextIdNum = 1;
-    if (invoices.length > 0) {
-        const last = invoices[invoices.length - 1].id;
-        const match = last.match(/APEDGEDOC(\d+)/);
-        if (match) nextIdNum = parseInt(match[1]) + 1;
-    }
-    const newInvoiceId = `APEDGEDOC${String(nextIdNum).padStart(3, '0')}`;
+  // === Generate APEDGE-style Invoice ID ===
+  let nextIdNum = 1;
+  if (invoices.length > 0) {
+    const last = invoices[invoices.length - 1].id;
+    const match = last.match(/APEDGEDOC(\d+)/);
+    if (match) nextIdNum = parseInt(match[1]) + 1;
+  }
+  const newInvoiceId = `APEDGEDOC${String(nextIdNum).padStart(3, '0')}`;
 
-    // === Rename the uploaded file ===
-    const ext = path.extname(file.originalname); // e.g., .pdf
-    const newFileName = `${newInvoiceId}${ext}`;
-    const newFilePath = path.join(path.dirname(file.path), newFileName);
-    fs.renameSync(file.path, newFilePath); // Renames the file on disk
+  // === Rename the uploaded file ===
+  const ext = path.extname(file.originalname); // e.g., .pdf
+  const newFileName = `${newInvoiceId}${ext}`;
+  const newFilePath = path.join(path.dirname(file.path), newFileName);
+  fs.renameSync(file.path, newFilePath); // Renames the file on disk
 
-    // === Create new invoice object ===
-    const newInvoice = {
-        id: newInvoiceId,
-        filePath: newFilePath.replace(/\\/g, '/'),
-        fileName: newFileName,
-        companyId,
-        clerkId,
-        poId,
-        status: 'ocr_done',
-        date: new Date().toISOString(),
-        logs: [{ action: 'uploaded', by: clerkId, at: new Date().toISOString() }]
-    };
+  // === Create new invoice object ===
+  const newInvoice = {
+    id: newInvoiceId,
+    filePath: newFilePath.replace(/\\/g, '/'),
+    fileName: newFileName,
+    companyId,
+    clerkId,
+    poId,
+    status: 'ocr_done', // Backend sets this status
+    date: new Date().toISOString(),
+    logs: [{ action: 'uploaded', by: clerkId, at: new Date().toISOString() }]
+  };
 
-    invoices.push(newInvoice);
-    writeJSON('invoices.json', invoices);
+  invoices.push(newInvoice);
+  writeJSON('invoices.json', invoices);
 
-    // === Simulated OCR result ===
-    const simulatedOCR = {
-        invoiceId: newInvoiceId,
-        ocrData: {
-            invoiceNumber: `INV-${newInvoiceId}`,
-            date: new Date().toISOString().split('T')[0],
-            vendor: 'ABC Pvt Ltd',
-            amount: '25000',
-            gst: '18%',
-            items: [
-                { name: 'Item A', quantity: 5, rate: 1000 },
-                { name: 'Item B', quantity: 10, rate: 1500 }
-            ],
-            extractedBy: clerkId
-        },
-        ocr_confidence: Math.floor(Math.random() * 10) + 90,
-        timestamp: new Date().toISOString()
-    };
+  // === Simulated OCR result ===
+  const simulatedOCR = {
+    invoiceId: newInvoiceId,
+    ocrData: {
+      invoiceNumber: `INV-${newInvoiceId}`,
+      date: new Date().toISOString().split('T')[0],
+      vendor: 'ABC Pvt Ltd',
+      amount: '25000',
+      grandTotal: '25000', // Added grandTotal for consistency with OCR data structure
+      gst: '18%',
+      items: [
+        { name: 'Item A', quantity: 5, rate: 1000 },
+        { name: 'Item B', quantity: 10, rate: 1500 }
+      ],
+      extractedBy: clerkId
+    },
+    ocr_confidence: Math.floor(Math.random() * 10) + 90,
+    timestamp: new Date().toISOString()
+  };
 
-    ocrResults.push(simulatedOCR);
-    writeJSON('ocr_results.json', ocrResults);
+  ocrResults.push(simulatedOCR);
+  writeJSON('ocr_results.json', ocrResults);
 
-    res.json({ success: true, invoice: newInvoice });
+  res.json({ success: true, invoice: newInvoice });
 });
 
 
 // === GET ALL INVOICES ===
 app.get('/api/invoices', (req, res) => {
-    const invoices = readJSON('invoices.json');
-    res.json(invoices);
+  const invoices = readJSON('invoices.json');
+  res.json(invoices);
 });
 
 // === OCR RESULT ===
 app.get('/api/ocr-results', (req, res) => {
-    try {
-        const data = readJSON('ocr_results.json');
-        res.json(data);
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to read OCR results' });
-    }
+  try {
+    const data = readJSON('ocr_results.json');
+    res.json(data);
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to read OCR results' });
+  }
 });
 
 
 app.post('/api/ocr/:invoiceId', (req, res) => {
-    const { invoiceId } = req.params;
-    const newOcr = req.body;
-    const allOCR = readJSON('ocr_results.json');
+  const { invoiceId } = req.params;
+  const newOcr = req.body;
+  const allOCR = readJSON('ocr_results.json');
 
-    const existing = allOCR.find(o => o.invoiceId == invoiceId);
-    if (existing) {
-        // Only update the changed fields
-        Object.assign(existing.ocrData, newOcr);
-        existing.timestamp = new Date().toISOString();
-    } else {
-        allOCR.push({ invoiceId, ocrData: newOcr, timestamp: new Date().toISOString() });
-    }
+  const existing = allOCR.find(o => o.invoiceId == invoiceId);
+  if (existing) {
+    // Only update the changed fields
+    Object.assign(existing.ocrData, newOcr);
+    existing.timestamp = new Date().toISOString();
+  } else {
+    allOCR.push({ invoiceId, ocrData: newOcr, timestamp: new Date().toISOString() });
+  }
 
-    writeJSON('ocr_results.json', allOCR);
+  writeJSON('ocr_results.json', allOCR);
 
-    const invoices = readJSON('invoices.json');
-    const invoice = invoices.find(i => i.id == invoiceId);
-    if (invoice) {
-        invoice.status = 'ocr_done';
-        invoice.logs.push({ action: 'draft_saved', at: new Date().toISOString() });
-        writeJSON('invoices.json', invoices);
-    }
+  const invoices = readJSON('invoices.json');
+  const invoice = invoices.find(i => i.id == invoiceId);
+  if (invoice) {
+    invoice.status = 'ocr_done';
+    invoice.logs.push({ action: 'draft_saved', at: new Date().toISOString() });
+    writeJSON('invoices.json', invoices);
+  }
 
-    res.json({ success: true });
+  res.json({ success: true });
 });
 
 
 // === EXTRACTION RESULT ===
 app.post('/api/extraction/:invoiceId', (req, res) => {
-    const { invoiceId } = req.params;
-    const extracted = req.body;
-    const data = readJSON('extracted_data.json');
-    data.push({ invoiceId, extracted, timestamp: new Date().toISOString() });
-    writeJSON('extracted_data.json', data);
+  const { invoiceId } = req.params;
+  const extracted = req.body;
+  const data = readJSON('extracted_data.json');
+  data.push({ invoiceId, extracted, timestamp: new Date().toISOString() });
+  writeJSON('extracted_data.json', data);
 
-    const invoices = readJSON('invoices.json');
-    const invoice = invoices.find(i => i.id == invoiceId);
-    if (invoice) {
-        invoice.status = 'extracted';
-        invoice.logs.push({ action: 'extracted', at: new Date().toISOString() });
-        writeJSON('invoices.json', invoices);
-    }
+  const invoices = readJSON('invoices.json');
+  const invoice = invoices.find(i => i.id == invoiceId);
+  if (invoice) {
+    invoice.status = 'extracted';
+    invoice.logs.push({ action: 'extracted', at: new Date().toISOString() });
+    writeJSON('invoices.json', invoices);
+  }
 
-    res.json({ success: true });
+  res.json({ success: true });
 });
 
 // === RECONCILIATION RESULT ===
 
-// GET all reconciled invoices
+// Add this new endpoint to fetch a single reconciliation record by invoiceId
+app.get('/api/reconciliation/:invoiceId', (req, res) => {
+  const { invoiceId } = req.params;
+  const data = readJSON('reconciliation.json'); // This now contains the comprehensive data
+
+  const record = data.find(r => r.invoiceId === invoiceId);
+
+  if (record) {
+    res.json(record);
+  } else {
+    res.status(404).json({ error: 'Reconciliation record not found for this invoice ID.' });
+  }
+});
+
+// Keep the GET all if needed for other parts of the app
 app.get('/api/reconciliation', (req, res) => {
-    const data = readJSON('reconciliation.json');
-    res.json(data);
+  const data = readJSON('reconciliation.json');
+  res.json(data);
 });
 
 app.post('/api/reconcile/:invoiceId', (req, res) => {
-    const { invoiceId } = req.params;
-    const result = req.body;
-    const data = readJSON('reconciliation.json');
+  const { invoiceId } = req.params;
+  const result = req.body;
+  const data = readJSON('reconciliation.json');
 
-    // Only if approved, push to reconciliation
-    if (result.approved) {
-        data.push({ invoiceId, result, timestamp: new Date().toISOString() });
-        writeJSON('reconciliation.json', data);
-    }
+  // Only if approved, push to reconciliation
+  if (result.approved) {
+    data.push({ invoiceId, result, timestamp: new Date().toISOString() });
+    writeJSON('reconciliation.json', data);
+  }
 
-    // Update invoice status only
-    const invoices = readJSON('invoices.json');
-    const invoice = invoices.find(i => i.id == invoiceId);
-    if (invoice) {
-        invoice.status = result.rejected ? 'rejected' : 'reconciled';
-        invoice.logs.push({
-            action: result.rejected ? 'rejected' : 'reconciled',
-            at: new Date().toISOString(),
-            reason: result.reason || '',
-        });
-        writeJSON('invoices.json', invoices);
-    }
+  // Update invoice status only
+  const invoices = readJSON('invoices.json');
+  const invoice = invoices.find(i => i.id == invoiceId);
+  if (invoice) {
+    invoice.status = result.rejected ? 'rejected' : 'reconciled';
+    invoice.logs.push({
+      action: result.rejected ? 'rejected' : 'reconciled',
+      at: new Date().toISOString(),
+      reason: result.reason || '',
+    });
+    writeJSON('invoices.json', invoices);
+  }
 
-    res.json({ success: true });
+  res.json({ success: true });
 });
 
 app.get('/api/invoice/:id', (req, res) => {
-    const invoices = readJSON('invoices.json');
-    const invoice = invoices.find(i => i.id == req.params.id);
-    res.json(invoice);
+  const invoices = readJSON('invoices.json');
+  const invoice = invoices.find(i => i.id == req.params.id);
+  res.json(invoice);
 });
 
 // All POs
 app.get('/api/po/all', (req, res) => {
-    const poList = readJSON('purchase_orders.json');
-    res.json(poList);
+  const poList = readJSON('purchase_orders.json');
+  res.json(poList);
 });
 
 // All GRNs
 app.get('/api/grn/all', (req, res) => {
-    const grnList = readJSON('grn.json');
-    res.json(grnList);
+  const grnList = readJSON('grn.json');
+  res.json(grnList);
 });
 
 
@@ -513,31 +525,30 @@ app.post('/api/match/:invoiceId', (req, res) => {
 
 // === DASHBOARD METRICS API ===
 app.get('/api/dashboard-stats', (req, res) => {
-    const invoices = readJSON('invoices.json');
-    const reconciliation = readJSON('reconciliation.json');
+  const invoices = readJSON('invoices.json');
+  const reconciliation = readJSON('reconciliation.json');
 
-    const invoiceUploaded = invoices.length;
-    const invoiceDraft = invoices.filter(i => i.status === 'ocr_done' || i.status === 'extracted').length;
-    const invoiceReviewed = invoices.filter(i => i.status === 'verified' || i.status === 'matched').length;
-    const invoiceRejected = invoices.filter(i => i.status === 'rejected').length;
+  const invoiceUploaded = invoices.length;
+  const invoiceDraft = invoices.filter(i => i.status === 'ocr_done' || i.status === 'extracted').length;
+  const invoiceReviewed = invoices.filter(i => i.status === 'verified' || i.status === 'matched').length;
+  const invoiceRejected = invoices.filter(i => i.status === 'rejected').length;
 
-    const reconDraft = invoices.filter(i => i.status === 'verified').length;
-    const reconCompleted = invoices.filter(i => i.status === 'reconciled').length;
-    const reconRejected = reconciliation.filter(r => r.result?.status === 'rejected').length;
+  const reconDraft = invoices.filter(i => i.status === 'verified').length;
+  const reconCompleted = invoices.filter(i => i.status === 'reconciled').length;
+  const reconRejected = reconciliation.filter(r => r.result?.status === 'rejected').length;
 
-    res.json({
-        invoiceUploaded,
-        invoiceDraft,
-        invoiceReviewed,
-        invoiceRejected,
-        reconDraft,
-        reconCompleted,
-        reconRejected
-    });
+  res.json({
+    invoiceUploaded,
+    invoiceDraft,
+    invoiceReviewed,
+    invoiceRejected,
+    reconDraft,
+    reconCompleted,
+    reconRejected
+  });
 });
 
 // === SERVE GENERIC FIELD STRUCTURE ===
-
 
 app.get('/api/generic-fields', (req, res) => {
   try {
@@ -572,23 +583,99 @@ app.get('/api/form-fields/:userId', (req, res) => {
     elements: [],
   };
 
+  // ✅ NEW: Helper function to convert labels to camelCase for programmatic use
+  const toCamelCase = (str) => {
+    return str
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
+        index === 0 ? word.toLowerCase() : word.toUpperCase()
+      )
+      .replace(/\s+/g, '');
+  };
+
   Object.entries(userFields).forEach(([label, def]) => {
-    const key = label.trim().replace(/\s+/g, '_');
+    // ✅ CHANGED: Use the new camelCase key for consistency
+    const key = toCamelCase(label);
 
     schema.properties[key] = {
-      type: def.type === 'number' ? 'number' : 'string'
+      type: def.type === 'number' ? 'number' : 'string',
+      title: label // Keep the original label for display purposes if needed
     };
 
     if (def.required) schema.required.push(key);
 
     uiSchema.elements.push({
       type: 'Control',
-      label: label,
+      label: label, // Use the original label for the form field
       scope: `#/properties/${key}`,
     });
   });
 
   res.json({ schema, uiSchema });
+});
+
+
+app.get('/api/reimbursements', (req, res) => {
+  const reimbursements = readJSON('reimbursements.json');
+  res.json(reimbursements);
+});
+
+app.get('/api/reimbursements/:id', (req, res) => {
+  const reimbursements = readJSON('reimbursements.json');
+  const match = reimbursements.find(r => r.id === req.params.id);
+  if (!match) return res.status(404).json({ error: 'Reimbursement not found' });
+  res.json(match);
+});
+
+// === NEW: UPDATE REIMBURSEMENT STATUS ===
+// server.js (Conceptual changes)
+
+app.put('/api/reimbursements/:id/status', (req, res) => {
+    const { id } = req.params;
+    const { status, user, reason } = req.body; // Expecting status, user, and reason
+
+    if (!status || !user) {
+        return res.status(400).json({ error: 'Status and user details are required.' });
+    }
+
+    if (!['approved', 'rejected'].includes(status)) {
+        return res.status(400).json({ error: 'Invalid status provided.' });
+    }
+
+    const reimbursements = readJSON('reimbursements.json'); // reads from database/reimbursements.json
+    const reimbursementIndex = reimbursements.findIndex(r => r.id === id);
+
+    if (reimbursementIndex === -1) {
+        return res.status(404).json({ error: 'Reimbursement not found.' });
+    }
+
+    // Update the reimbursement record
+    const updatedReimbursement = {
+        ...reimbursements[reimbursementIndex],
+        status: status,
+        approvalDate: new Date().toISOString(),
+        approvedBy: user.name,
+        approverRole: user.role || 'Unknown Role',
+    };
+
+    // Store the reason based on the status
+    if (status === 'approved') {
+        updatedReimbursement.approvalReason = reason;
+        delete updatedReimbursement.rejectionReason; // Clear rejection reason if previously set
+    } else if (status === 'rejected') {
+        updatedReimbursement.rejectionReason = reason;
+        delete updatedReimbursement.approvalReason; // Clear approval reason if previously set
+    }
+
+    reimbursements[reimbursementIndex] = updatedReimbursement;
+
+    try {
+        writeJSON('reimbursements.json', reimbursements); // writes to database/reimbursements.json
+        res.json({ success: true, reimbursement: updatedReimbursement });
+    } catch (error) {
+        console.error("❌ Error writing reimbursements file:", error.message);
+        res.status(500).json({ error: "Failed to update reimbursement." });
+    }
 });
 
 app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));

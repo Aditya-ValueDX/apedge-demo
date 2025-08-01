@@ -1,262 +1,633 @@
 [
   {
-    "invoiceId": "APEDGEDOC001",
-    "result": {
-      "status": "verified",
-      "verifiedBy": "APEDGE001",
-      "verifiedAt": "2025-06-18T06:32:28.420Z",
-      "rejectionComments": {},
-      "overriddenFields": []
+    "invoiceId": "APEDGEDOC010",
+    "Party & Address Information": {
+      "Buyer_Name": {
+        "Description": "The name of the buyer or ordering party",
+        "Invoice_Value": "Infosys Ltd",
+        "PO_Value": "INFOSYS LIMITED",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Only minor formatting and abbreviation differences."
+      },
+      "Seller_Name": {
+        "Description": "The name of the vendor or seller issuing the invoice",
+        "Invoice_Value": "TechnoSoft Pvt Ltd",
+        "PO_Value": "TechnoSoft Private Limited",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Legal entity suffix differs slightly."
+      },
+      "Buyer_GSTIN": {
+        "Description": "GSTIN Number",
+        "Invoice_Value": "29ABCDE1234F1Z7",
+        "PO_Value": "ABCDE1234F",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Invoice GSTIN contains full identifier; PO contains PAN segment only."
+      },
+      "Seller_PAN": {
+        "Description": "PAN Number",
+        "Invoice_Value": "ABCDE1234F",
+        "PO_Value": "ABCDE1234F",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Both documents have identical PAN."
+      }
     },
-    "timestamp": "2025-06-16T06:44:02.990Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC003",
-    "result": {
-      "status": "verified",
-      "verifiedBy": "APEDGE001",
-      "verifiedAt": "2025-06-18T06:55:35.722Z",
-      "rejectionComments": {},
-      "overriddenFields": []
+    "Financial Summary": {
+      "Total_Amount": {
+        "Description": "The total monetary value including all line items and taxes",
+        "Invoice_Value": "1,20,000.00",
+        "PO_Value": "120000",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Amounts match exactly (after removing formatting)."
+      }
     },
-    "timestamp": "2025-06-18T06:46:30.519Z"
-  },
-  {
-    "invoiceId": "APEDGEDOC004",
-    "result": {
-      "invoiceNumber": "INV-1750229766573",
-      "date": "2025-06-18",
-      "vendor": "ABC Pvt Ltd",
-      "amount": "25000",
-      "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
+    "Classification Codes": {
+      "HSN_SAC": {
+        "Description": "Harmonized System Nomenclature or Services Accounting Code",
+        "Invoice_Value": "998314",
+        "PO_Value": "998314",
+        "GRN_Value": "998314",
+        "Status": "Matched",
+        "Comment": "HSN/SAC Code is consistent across documents."
+      }
+    },
+    "Reference Metadata": {
+      "Invoice_Number": {
+        "Description": "Unique identifier for the invoice",
+        "Invoice_Value": "TS-INV-00022",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Missing in PO."
+      },
+      "PO_Number": {
+        "Description": "Unique identifier for the purchase order",
+        "Invoice_Value": "PO-2025-07-001",
+        "PO_Value": "PO-2025-07-001",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "PO number is consistent."
+      },
+      "Invoice_Date": {
+        "Description": "Date of Invoice creation",
+        "Invoice_Value": "2-Jul-2025",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Invoice date not found in PO."
+      },
+      "PO_Date": {
+        "Description": "Date of Purchase Order creation",
+        "Invoice_Value": "Missing",
+        "PO_Value": "30-Jun-2025",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO date is not found in the invoice document."
+      }
+    },
+    "Line Items": {
+      "Item_1": {
+        "Description": {
+          "Invoice_Value": "Software Development",
+          "PO_Value": "Software Development Services",
+          "GRN_Value": "Software Development",
+          "Status": "PartiallyMatch",
+          "Comment": "Item Name partially matches."
+        },
+        "Quantity": {
+          "Invoice_Value": "100",
+          "PO_Value": "100",
+          "GRN_Value": "95",
+          "Status": "NotMatch",
+          "Comment": "Quantity does not match."
+        },
+        "Rate": {
+          "Invoice_Value": "800.00",
+          "PO_Value": "800",
+          "GRN_Value": "800.00",
+          "Status": "Matched",
+          "Comment": "Rates match."
+        },
+        "Amount": {
+          "Invoice_Value": "80000.00",
+          "PO_Value": "80000",
+          "GRN_Value": "76000",
+          "Status": "NotMatch",
+          "Comment": "Amount does not match."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
         }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-06-18",
-      "dueDate": "2025-06-18",
-      "poNumber": "6",
-      "challanNumber": "CH123456",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
       },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
-      },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-18",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
-      },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
-      "approved": true
-    },
-    "timestamp": "2025-06-18T06:56:11.361Z"
+      "Item_2": {
+        "Description": {
+          "Invoice_Value": "System Integration Testing",
+          "PO_Value": "System Integration Testing",
+          "GRN_Value": "System Integration Testing",
+          "Status": "Matched",
+          "Comment": "Item Name matches."
+        },
+        "Quantity": {
+          "Invoice_Value": "50",
+          "PO_Value": "50",
+          "GRN_Value": "50",
+          "Status": "Matched",
+          "Comment": "Quantities match."
+        },
+        "Rate": {
+          "Invoice_Value": "800.00",
+          "PO_Value": "800",
+          "GRN_Value": "800",
+          "Status": "Matched",
+          "Comment": "Rates match."
+        },
+        "Amount": {
+          "Invoice_Value": "40000.00",
+          "PO_Value": "40000",
+          "GRN_Value": "40000",
+          "Status": "Matched",
+          "Comment": "Amounts match."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      }
+    }
   },
   {
-    "invoiceId": "APEDGEDOC008",
-    "result": {
-      "invoiceNumber": "INV-1750319812134",
-      "invoiceDate": "2025-06-19",
-      "dueDate": "2025-06-19",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
+    "invoiceId": "APEDGEDOC011",
+    "Party & Address Information": {
+      "Buyer_Name": {
+        "Description": "The name of the buyer or ordering party",
+        "Invoice_Value": "Wipro Ltd",
+        "PO_Value": "WIPRO LTD",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Exact match after case normalization."
       },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
+      "Seller_Name": {
+        "Description": "The name of the vendor",
+        "Invoice_Value": "CyberEdge Systems Pvt. Ltd.",
+        "PO_Value": "CYBEREDGE SYSTEMS PRIVATE LIMITED",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Difference in abbreviation."
       },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-19",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
+      "Buyer_GSTIN": {
+        "Description": "GST ID",
+        "Invoice_Value": "36ABCDE1234F1Z2",
+        "PO_Value": "36ABCDE1234F1Z2",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Full match."
       },
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": 0,
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
-      "extractedBy": "APEDGE001",
-      "approved": true
+      "Seller_PAN": {
+        "Description": "PAN Number",
+        "Invoice_Value": "ABCDE1234F",
+        "PO_Value": "ABCDE1234F",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Same PAN."
+      }
     },
-    "timestamp": "2025-06-19T07:56:58.282Z"
+    "Financial Summary": {
+      "Total_Amount": {
+        "Description": "Invoice total",
+        "Invoice_Value": "5,00,000.00",
+        "PO_Value": "500000",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Values are equal numerically."
+      }
+    },
+    "Classification Codes": {
+      "HSN_SAC": {
+        "Description": "Harmonized System Nomenclature or Services Accounting Code",
+        "Invoice_Value": "998314",
+        "PO_Value": "998314",
+        "GRN_Value": "998314",
+        "Status": "Matched",
+        "Comment": "HSN/SAC Code is consistent across documents."
+      }
+    },
+    "Reference Metadata": {
+      "Invoice_Number": {
+        "Description": "Unique identifier for the invoice",
+        "Invoice_Value": "CE-INVOICE-456",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Not found in PO."
+      },
+      "PO_Number": {
+        "Description": "Unique identifier for the purchase order",
+        "Invoice_Value": "WIP-PO-789",
+        "PO_Value": "WIP-PO-789",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Exact match."
+      },
+      "Invoice_Date": {
+        "Description": "Date of Invoice creation",
+        "Invoice_Value": "28-Jun-2025",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Date not found in PO."
+      },
+      "PO_Date": {
+        "Description": "Date of Purchase Order creation",
+        "Invoice_Value": "Missing",
+        "PO_Value": "27-Jun-2025",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO date not in invoice."
+      }
+    },
+    "Line Items": {
+      "Item_1": {
+        "Description": {
+          "Invoice_Value": "Firewall Implementation",
+          "PO_Value": "Firewall Setup",
+          "GRN_Value": "Firewall Implementation",
+          "Status": "PartiallyMatch",
+          "Comment": "Item Name partially matches."
+        },
+        "Quantity": {
+          "Invoice_Value": "1",
+          "PO_Value": "1",
+          "GRN_Value": "1",
+          "Status": "Matched",
+          "Comment": "Quantities match."
+        },
+        "Rate": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Amount": {
+          "Invoice_Value": "450000.00",
+          "PO_Value": "450000",
+          "GRN_Value": "450000",
+          "Status": "Matched",
+          "Comment": "Amounts match."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      },
+      "Item_2": {
+        "Description": {
+          "Invoice_Value": "Annual Maintenance Contract",
+          "PO_Value": "Annual Maintenance Contract",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Item Name missing in GRN."
+        },
+        "Quantity": {
+          "Invoice_Value": "1",
+          "PO_Value": "1",
+          "GRN_Value": "0",
+          "Status": "NotMatch",
+          "Comment": "Quantity does not match."
+        },
+        "Rate": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Amount": {
+          "Invoice_Value": "50000.00",
+          "PO_Value": "50000",
+          "GRN_Value": "0",
+          "Status": "NotMatch",
+          "Comment": "Amount does not match."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      }
+    }
   },
   {
-    "invoiceId": "APEDGEDOC007",
-    "result": {
-      "invoiceNumber": "INV-1750239839927",
-      "date": "2025-06-18",
-      "vendor": "SnapTech Pvt Ltd",
-      "amount": "55000",
-      "gst": "18%",
-      "items": [
-        {
-          "serial": 1,
-          "description": "Product A",
-          "hsn": "1001",
-          "itemCode": "SKU001",
-          "uom": "pcs",
-          "quantity": 5,
-          "rate": 1000,
-          "discount": 0,
-          "taxableValue": 5000,
-          "cgstRate": 9,
-          "cgstAmount": 450,
-          "sgstRate": 9,
-          "sgstAmount": 450,
-          "igstRate": 0,
-          "igstAmount": 0,
-          "total": 5900
-        }
-      ],
-      "extractedBy": "APEDGE001",
-      "invoiceDate": "2025-06-18",
-      "dueDate": "2025-06-18",
-      "invoiceType": "GST",
-      "paymentTerms": "Net 30",
-      "billType": "Tax Invoice",
-      "businessName": "Your Business Pvt Ltd",
-      "businessAddress": "123 Business Street, Pune",
-      "gstin": "27ABCDE1234F1Z5",
-      "panNumber": "ABCDE1234F",
-      "state": "Maharashtra",
-      "stateCode": "27",
-      "contact": "9876543210",
-      "email": "business@example.com",
-      "bankDetails": {
-        "accountNumber": "1234567890",
-        "ifsc": "SBIN0001234",
-        "upi": "yourbiz@upi"
+    "invoiceId": "APEDGEDOC012",
+    "Party & Address Information": {
+      "Buyer_Name": {
+        "Description": "Buyer company name",
+        "Invoice_Value": "Tata Consultancy Services",
+        "PO_Value": "TCS",
+        "GRN_Value": "Missing",
+        "Status": "NotMatch",
+        "Comment": "Completely different naming convention."
       },
-      "customer": {
-        "name": "Customer A",
-        "billingAddress": "Customer Address 1",
-        "shippingAddress": "Customer Shipping",
-        "gstin": "29AAACZ1234Q1Z1",
-        "panNumber": "AAACZ1234Q",
-        "state": "Karnataka",
-        "stateCode": "29",
-        "contact": "9123456789",
-        "email": "customer@example.com"
+      "Seller_Name": {
+        "Description": "Vendor company name",
+        "Invoice_Value": "AlphaBeta Technologies",
+        "PO_Value": "ALPHABETA TECH LLP",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Entity type differs; otherwise similar name."
       },
-      "placeOfSupply": "Karnataka",
-      "transport": {
-        "transporterName": "XYZ Logistics",
-        "vehicleNumber": "MH12AB1234",
-        "mode": "Road",
-        "deliveryDate": "2025-06-18",
-        "ewayBillNumber": "EWB12345678",
-        "lrNumber": "LR123456"
+      "Buyer_GSTIN": {
+        "Description": "GST Number",
+        "Invoice_Value": "09ABCDE1234F1Z6",
+        "PO_Value": "ABCDE1234F",
+        "GRN_Value": "Missing",
+        "Status": "PartiallyMatch",
+        "Comment": "Invoice contains full GSTIN, PO contains only PAN segment."
       },
-      "subtotal": 5000,
-      "totalDiscount": 0,
-      "totalCGST": 450,
-      "totalSGST": 450,
-      "totalIGST": 0,
-      "shippingCharges": "500",
-      "roundOff": 0,
-      "grandTotal": 5900,
-      "amountInWords": "Five Thousand Nine Hundred Rupees Only",
-      "approved": true
+      "Seller_PAN": {
+        "Description": "PAN Number",
+        "Invoice_Value": "ABCDE1234F",
+        "PO_Value": "ABCDE1234F",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Matching PAN."
+      }
     },
-    "timestamp": "2025-06-20T09:00:04.315Z"
+    "Financial Summary": {
+      "Total_Amount": {
+        "Description": "Total billed amount",
+        "Invoice_Value": "3,00,000.00",
+        "PO_Value": "295000",
+        "GRN_Value": "Missing",
+        "Status": "NotMatch",
+        "Comment": "Invoice includes additional charges."
+      }
+    },
+    "Classification Codes": {
+      "HSN_SAC": {
+        "Description": "Harmonized System Nomenclature or Services Accounting Code",
+        "Invoice_Value": "Missing",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Missing"
+      }
+    },
+    "Reference Metadata": {
+      "Invoice_Number": {
+        "Description": "Unique identifier for the invoice",
+        "Invoice_Value": "INV-TCS-2025-22",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Invoice number not in PO."
+      },
+      "PO_Number": {
+        "Description": "Unique identifier for the purchase order",
+        "Invoice_Value": "PO-TCS-999",
+        "PO_Value": "PO-TCS-999",
+        "GRN_Value": "Missing",
+        "Status": "Matched",
+        "Comment": "Match found."
+      },
+      "Invoice_Date": {
+        "Description": "Date of Invoice creation",
+        "Invoice_Value": "30-Jun-2025",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Missing in PO."
+      },
+      "PO_Date": {
+        "Description": "Date of Purchase Order creation",
+        "Invoice_Value": "Missing",
+        "PO_Value": "28-Jun-2025",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "Not in invoice."
+      }
+    },
+    "Line Items": {
+      "Item_1": {
+        "Description": {
+          "Invoice_Value": "Cloud Migration Service",
+          "PO_Value": "Cloud Migration Service",
+          "GRN_Value": "Cloud Migration Service",
+          "Status": "Matched",
+          "Comment": "Item Name matches."
+        },
+        "Quantity": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Rate": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Amount": {
+          "Invoice_Value": "295000.00",
+          "PO_Value": "295000.00",
+          "GRN_Value": "295000.00",
+          "Status": "Matched",
+          "Comment": "Amounts match."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      },
+      "Item_2": {
+        "Description": {
+          "Invoice_Value": "Additional Support Hours",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Item Name missing in PO and GRN."
+        },
+        "Quantity": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Rate": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Amount": {
+          "Invoice_Value": "5000.00",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Amount missing in PO and GRN."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      }
+    }
+  },
+  {
+    "invoiceId": "APEDGEDOC005",
+    "Party & Address Information": {
+      "Buyer_Name": {
+        "Description": "Buyer company name",
+        "Invoice_Value": "Customer A",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "Seller_Name": {
+        "Description": "Vendor company name",
+        "Invoice_Value": "Your Business Pvt Ltd",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "Buyer_GSTIN": {
+        "Description": "GST Number",
+        "Invoice_Value": "29AAACZ1234Q1Z1",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "Seller_PAN": {
+        "Description": "PAN Number",
+        "Invoice_Value": "ABCDE1234F",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      }
+    },
+    "Financial Summary": {
+      "Total_Amount": {
+        "Description": "Total billed amount",
+        "Invoice_Value": "5,900.00",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      }
+    },
+    "Classification Codes": {
+      "HSN_SAC": {
+        "Description": "Harmonized System Nomenclature or Services Accounting Code",
+        "Invoice_Value": "85238020",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "HSN/SAC Code missing in PO and GRN."
+      }
+    },
+    "Reference Metadata": {
+      "Invoice_Number": {
+        "Description": "Unique identifier for the invoice",
+        "Invoice_Value": "APEDGEDOC005",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "PO_Number": {
+        "Description": "Unique identifier for the purchase order",
+        "Invoice_Value": "PO-78965",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "Invoice_Date": {
+        "Description": "Date of Invoice creation",
+        "Invoice_Value": "01-Jul-2025",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      },
+      "PO_Date": {
+        "Description": "Date of Purchase Order creation",
+        "Invoice_Value": "17-Jun-2025",
+        "PO_Value": "Missing",
+        "GRN_Value": "Missing",
+        "Status": "Missing",
+        "Comment": "PO data not available for comparison."
+      }
+    },
+    "Line Items": {
+      "Item_1": {
+        "Description": {
+          "Invoice_Value": "Office Productivity Suite",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Item Name missing in PO and GRN."
+        },
+        "Quantity": {
+          "Invoice_Value": "1",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Quantity missing in PO and GRN."
+        },
+        "Rate": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        },
+        "Amount": {
+          "Invoice_Value": "5900.00",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Amount missing in PO and GRN."
+        },
+        "Tax": {
+          "Invoice_Value": "Missing",
+          "PO_Value": "Missing",
+          "GRN_Value": "Missing",
+          "Status": "Missing",
+          "Comment": "Missing"
+        }
+      }
+    }
   }
 ]

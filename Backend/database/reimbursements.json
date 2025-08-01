@@ -1,0 +1,719 @@
+[
+  {
+    "id": "RMB001",
+    "employeeName": "John Doe",
+    "employeeId": "EMP-1001",
+    "department": "Sales",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Flight Ticket",
+          "Expense Type": "Travel",
+          "Date of Expense": "2025-06-10",
+          "Expense Amount (INR)": "1200.00",
+          "Reimbursement Eligibility": "Not Allowed-Exceeded budget for this quarter."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-10",
+          "Vendor": "Flight Ticket",
+          "Expense Type": "Travel",
+          "Expense Amount (INR)": "1200.00",
+          "Reimbursement Eligibility": "Not Allowed-Exceeded budget for this quarter."
+        }
+      ],
+      "Total Not Allowed (INR)": "1200.00"
+    },
+    "status": "rejected",
+    "description": "Flight ticket to client meeting in Mumbai. Exceeded budget for this quarter.",
+    "receipts": [
+      "flight-ticket-MUM.pdf"
+    ],
+    "category": "Client Visit",
+    "project": "Project Alpha",
+    "approvalDate": "2025-06-11T14:30:00Z",
+    "approvedBy": "Manager Bob"
+  },
+  {
+    "id": "RMB002",
+    "employeeName": "Jane Smith",
+    "employeeId": "EMP-2002",
+    "department": "Marketing",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Team Lunch",
+          "Expense Type": "Meals",
+          "Date of Expense": "2025-06-12",
+          "Expense Amount (INR)": "450.00",
+          "Reimbursement Eligibility": "Allowed-Food expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-12",
+          "Vendor": "Team Lunch",
+          "Expense Type": "Meals",
+          "Expense Amount (INR)": "450.00",
+          "Reimbursement Eligibility": "Allowed-Food expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "450.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Team lunch for campaign brainstorming session.",
+    "receipts": [
+      "team-lunch-receipt.jpg"
+    ],
+    "category": "Team Building",
+    "project": "Q3 Campaign",
+    "approvalDate": "2025-06-12T18:00:00Z",
+    "approvedBy": "Manager Alice"
+  },
+  {
+    "id": "RMB003",
+    "employeeName": "Amit Patel",
+    "employeeId": "EMP-3003",
+    "department": "Engineering",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Hotel Booking",
+          "Expense Type": "Hotel",
+          "Date of Expense": "2025-06-15",
+          "Expense Amount (INR)": "2200.00",
+          "Reimbursement Eligibility": "Not Allowed-Incorrect hotel category selected."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-15",
+          "Vendor": "Hotel Booking",
+          "Expense Type": "Hotel",
+          "Expense Amount (INR)": "2200.00",
+          "Reimbursement Eligibility": "Not Allowed-Incorrect hotel category selected."
+        }
+      ],
+      "Total Not Allowed (INR)": "2200.00"
+    },
+    "status": "rejected",
+    "description": "Accommodation for attending a tech conference in Bangalore. Incorrect hotel category selected.",
+    "receipts": [
+      "hotel-booking.pdf",
+      "misc-charges.pdf"
+    ],
+    "category": "Training & Development",
+    "project": "N/A",
+    "approvalDate": "2025-07-03T04:24:48.306Z",
+    "approvedBy": "ValueDX"
+  },
+  {
+    "id": "RMB004",
+    "employeeName": "Nina Sharma",
+    "employeeId": "EMP-4004",
+    "department": "HR",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Bus Ticket",
+          "Expense Type": "Travel",
+          "Date of Expense": "2025-06-16",
+          "Expense Amount (INR)": "800.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-16",
+          "Vendor": "Bus Ticket",
+          "Expense Type": "Travel",
+          "Expense Amount (INR)": "800.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "800.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Bus ticket for attending a recruitment drive.",
+    "receipts": [
+      "bus-ticket.pdf"
+    ],
+    "category": "Recruitment",
+    "project": "Campus Hiring 2025",
+    "approvalDate": "2025-06-16T16:45:00Z",
+    "approvedBy": "Manager Clark"
+  },
+  {
+    "id": "RMB005",
+    "employeeName": "Ravi Kumar",
+    "employeeId": "EMP-5005",
+    "department": "Engineering",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Lunch Summary",
+          "Expense Type": "Meals",
+          "Date of Expense": "2025-06-17",
+          "Expense Amount (INR)": "350.00",
+          "Reimbursement Eligibility": "Not Allowed-Missing detailed receipt."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-17",
+          "Vendor": "Lunch Summary",
+          "Expense Type": "Meals",
+          "Expense Amount (INR)": "350.00",
+          "Reimbursement Eligibility": "Not Allowed-Missing detailed receipt."
+        }
+      ],
+      "Total Not Allowed (INR)": "350.00"
+    },
+    "status": "rejected",
+    "description": "Business lunch with a potential vendor. Missing detailed receipt.",
+    "receipts": [
+      "lunch-summary.png"
+    ],
+    "category": "Business Development",
+    "project": "Vendor Evaluation",
+    "approvalDate": "2025-06-18T11:20:00Z",
+    "approvedBy": "Manager Bob"
+  },
+  {
+    "id": "RMB006",
+    "employeeName": "Priya Verma",
+    "employeeId": "EMP-6006",
+    "department": "Marketing",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "SAAS Invoice",
+          "Expense Type": "Software",
+          "Date of Expense": "2025-06-18",
+          "Expense Amount (INR)": "1800.00",
+          "Reimbursement Eligibility": "Allowed-Software expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-18",
+          "Vendor": "SAAS Invoice",
+          "Expense Type": "Software",
+          "Expense Amount (INR)": "1800.00",
+          "Reimbursement Eligibility": "Allowed-Software expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "1800.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Subscription for a social media analytics tool.",
+    "receipts": [
+      "saas-invoice.pdf"
+    ],
+    "category": "Tools & Subscriptions",
+    "project": "Social Media Engagement",
+    "approvalDate": "2025-07-03T04:21:03.388Z",
+    "approvedBy": "Finance Manager"
+  },
+  {
+    "id": "RMB007",
+    "employeeName": "Anil Joshi",
+    "employeeId": "EMP-7007",
+    "department": "Sales",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Flight Delhi Invoice",
+          "Expense Type": "Travel",
+          "Date of Expense": "2025-06-19",
+          "Expense Amount (INR)": "1500.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-19",
+          "Vendor": "Flight Delhi Invoice",
+          "Expense Type": "Travel",
+          "Expense Amount (INR)": "1500.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "1500.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Flight to a client meeting in Delhi.",
+    "receipts": [
+      "flight-del-invoice.pdf"
+    ],
+    "category": "Client Visit",
+    "project": "Project Gamma",
+    "approvalDate": "2025-06-19T14:00:00Z",
+    "approvedBy": "Manager Alice"
+  },
+  {
+    "id": "RMB008",
+    "employeeName": "Geeta Mehta",
+    "employeeId": "EMP-8008",
+    "department": "Finance",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Stationery Bill",
+          "Expense Type": "Office Supplies",
+          "Date of Expense": "2025-06-20",
+          "Expense Amount (INR)": "600.00",
+          "Reimbursement Eligibility": "Not Allowed-Exceeded department budget."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-20",
+          "Vendor": "Stationery Bill",
+          "Expense Type": "Office Supplies",
+          "Expense Amount (INR)": "600.00",
+          "Reimbursement Eligibility": "Not Allowed-Exceeded department budget."
+        }
+      ],
+      "Total Not Allowed (INR)": "600.00"
+    },
+    "status": "rejected",
+    "description": "Stationery supplies. Exceeded department budget.",
+    "receipts": [
+      "stationery-bill.jpg"
+    ],
+    "category": "Office Expenses",
+    "project": "N/A",
+    "approvalDate": "2025-06-21T10:00:00Z",
+    "approvedBy": "Manager Clark"
+  },
+  {
+    "id": "RMB009",
+    "employeeName": "Suresh Reddy",
+    "employeeId": "EMP-9009",
+    "department": "IT",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "SSD Invoice",
+          "Expense Type": "Hardware",
+          "Date of Expense": "2025-06-22",
+          "Expense Amount (INR)": "2500.00",
+          "Reimbursement Eligibility": "Not Allowed-Purchase was not pre-approved."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-22",
+          "Vendor": "SSD Invoice",
+          "Expense Type": "Hardware",
+          "Expense Amount (INR)": "2500.00",
+          "Reimbursement Eligibility": "Not Allowed-Purchase was not pre-approved."
+        }
+      ],
+      "Total Not Allowed (INR)": "2500.00"
+    },
+    "status": "rejected",
+    "description": "New SSD for performance upgrade on development machine. Purchase was not pre-approved.",
+    "receipts": [
+      "ssd-invoice.pdf"
+    ],
+    "category": "IT Equipment",
+    "project": "Dev Infra Upgrade",
+    "approvalDate": "2025-07-03T04:19:16.754Z",
+    "approvedBy": "Finance Manager"
+  },
+  {
+    "id": "RMB010",
+    "employeeName": "Kavita Singh",
+    "employeeId": "EMP-1010",
+    "department": "Operations",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Taxi Log",
+          "Expense Type": "Transport",
+          "Date of Expense": "2025-07-01",
+          "Expense Amount (INR)": "750.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-07-01",
+          "Vendor": "Taxi Log",
+          "Expense Type": "Transport",
+          "Expense Amount (INR)": "750.00",
+          "Reimbursement Eligibility": "Allowed-Travel expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "750.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Local taxi fare for site inspections over 3 days.",
+    "receipts": [
+      "taxi-log.xlsx"
+    ],
+    "category": "Field Work",
+    "project": "Site Audit Q3",
+    "approvalDate": "2025-07-04T05:16:15.454Z",
+    "approvedBy": "ValueDX",
+    "approverRole": "Unknown Role"
+  },
+  {
+    "id": "RMB011",
+    "employeeName": "Rajesh Sharma",
+    "employeeId": "EMP-1011",
+    "department": "IT",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Internet Bill July",
+          "Expense Type": "Internet",
+          "Date of Expense": "2025-07-02",
+          "Expense Amount (INR)": "999.00",
+          "Reimbursement Eligibility": "Allowed-Internet expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-07-02",
+          "Vendor": "Internet Bill July",
+          "Expense Type": "Internet",
+          "Expense Amount (INR)": "999.00",
+          "Reimbursement Eligibility": "Allowed-Internet expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "999.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Monthly broadband bill for remote work.",
+    "receipts": [
+      "internet-bill-july.pdf"
+    ],
+    "category": "Work From Home",
+    "project": "N/A",
+    "approvalDate": "2025-07-04T09:11:25.900Z",
+    "approvedBy": "ValueDX",
+    "approverRole": "Unknown Role"
+  },
+  {
+    "id": "RMB012",
+    "employeeName": "Deepika Rao",
+    "employeeId": "EMP-1012",
+    "department": "Sales",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Client Dinner",
+          "Expense Type": "Meals",
+          "Date of Expense": "2025-07-03",
+          "Expense Amount (INR)": "1250.00",
+          "Reimbursement Eligibility": "Allowed-Food expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-07-03",
+          "Vendor": "Client Dinner",
+          "Expense Type": "Meals",
+          "Expense Amount (INR)": "1250.00",
+          "Reimbursement Eligibility": "Allowed-Food expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "1250.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Dinner with prospective client from 'Innovate Corp'.",
+    "receipts": [
+      "client-dinner.jpg"
+    ],
+    "category": "Client Entertainment",
+    "project": "Lead Gen Q3",
+    "approvalDate": "2025-07-03T05:03:22.596Z",
+    "approvedBy": "ValueDX"
+  },
+  {
+    "id": "RMB013",
+    "employeeName": "Vikram Rathod",
+    "employeeId": "EMP-1013",
+    "department": "Engineering",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Bookstore Receipt",
+          "Expense Type": "Books",
+          "Date of Expense": "2025-06-25",
+          "Expense Amount (INR)": "1850.00",
+          "Reimbursement Eligibility": "Allowed-Books are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-25",
+          "Vendor": "Bookstore Receipt",
+          "Expense Type": "Books",
+          "Expense Amount (INR)": "1850.00",
+          "Reimbursement Eligibility": "Allowed-Books are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "1850.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Purchase of technical books for team library.",
+    "receipts": [
+      "bookstore-receipt.pdf"
+    ],
+    "category": "Training & Development",
+    "project": "Team Skill Up",
+    "approvalDate": "2025-06-26T15:00:00Z",
+    "approvedBy": "Manager Bob"
+  },
+  {
+    "id": "RMB014",
+    "employeeName": "Sunita Gupta",
+    "employeeId": "EMP-1014",
+    "department": "HR",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Catering Invoice",
+          "Expense Type": "Events",
+          "Date of Expense": "2025-06-28",
+          "Expense Amount (INR)": "5500.00",
+          "Reimbursement Eligibility": "Allowed-Event expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-28",
+          "Vendor": "Catering Invoice",
+          "Expense Type": "Events",
+          "Expense Amount (INR)": "5500.00",
+          "Reimbursement Eligibility": "Allowed-Event expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "5500.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Catering for the quarterly town hall meeting.",
+    "receipts": [
+      "catering-invoice.pdf"
+    ],
+    "category": "Company Event",
+    "project": "Town Hall Q2",
+    "approvalDate": "2025-06-29T11:00:00Z",
+    "approvedBy": "Manager Clark"
+  },
+  {
+    "id": "RMB015",
+    "employeeName": "Manoj Tiwari",
+    "employeeId": "EMP-1015",
+    "department": "Marketing",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Social Media Ads",
+          "Expense Type": "Advertising",
+          "Date of Expense": "2025-06-30",
+          "Expense Amount (INR)": "8000.00",
+          "Reimbursement Eligibility": "Allowed-Advertising expenses are eligible for reimbursement"
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-30",
+          "Vendor": "Social Media Ads",
+          "Expense Type": "Advertising",
+          "Expense Amount (INR)": "8000.00",
+          "Reimbursement Eligibility": "Allowed-Advertising expenses are eligible for reimbursement"
+        }
+      ],
+      "Total Amount for Reimbursement (INR)": "8000.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Not Allowed (INR)": "0.00"
+    },
+    "status": "approved",
+    "description": "Payment for sponsored posts on social media platform.",
+    "receipts": [
+      "social-media-ads.pdf"
+    ],
+    "category": "Digital Marketing",
+    "project": "Product Launch X",
+    "approvalDate": "2025-07-01T09:30:00Z",
+    "approvedBy": "Manager Alice"
+  },
+  {
+    "id": "RMB016",
+    "employeeName": "Alok Verma",
+    "employeeId": "EMP-1016",
+    "department": "Operations",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Courier Receipt",
+          "Expense Type": "Courier",
+          "Date of Expense": "2025-06-26",
+          "Expense Amount (INR)": "320.00",
+          "Reimbursement Eligibility": "Not Allowed-Should be billed through central mailroom."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-26",
+          "Vendor": "Courier Receipt",
+          "Expense Type": "Courier",
+          "Expense Amount (INR)": "320.00",
+          "Reimbursement Eligibility": "Not Allowed-Should be billed through central mailroom."
+        }
+      ],
+      "Total Not Allowed (INR)": "320.00"
+    },
+    "status": "rejected",
+    "description": "Sent documents to a client. This should be billed through the central mailroom, not reimbursed.",
+    "receipts": [
+      "courier-receipt.jpg"
+    ],
+    "category": "Office Expenses",
+    "project": "N/A",
+    "approvalDate": "2025-06-27T10:00:00Z",
+    "approvedBy": "Manager Clark"
+  },
+  {
+    "id": "RMB017",
+    "employeeName": "Fatima Khan",
+    "employeeId": "EMP-1017",
+    "department": "IT",
+    "Expense Report": [
+      {
+        "Document 1": {
+          "Vendor Name": "Design Tool License",
+          "Expense Type": "Software",
+          "Date of Expense": "2025-06-29",
+          "Expense Amount (INR)": "2500.00",
+          "Reimbursement Eligibility": "Not Allowed-Duplicate request."
+        }
+      }
+    ],
+    "Section 1: Allowed for Reimbursement": {
+      "Expenses": [],
+      "Total Amount for Reimbursement (INR)": "0.00"
+    },
+    "Section 2: Not Allowed for Reimbursement": {
+      "Expenses": [
+        {
+          "Date": "2025-06-29",
+          "Vendor": "Design Tool License",
+          "Expense Type": "Software",
+          "Expense Amount (INR)": "2500.00",
+          "Reimbursement Eligibility": "Not Allowed-Duplicate request."
+        }
+      ],
+      "Total Not Allowed (INR)": "2500.00"
+    },
+    "status": "pending",
+    "description": "License for a design tool. Duplicate request, already procured by the Design team.",
+    "receipts": [
+      "design-tool-license.pdf"
+    ],
+    "category": "Tools & Subscriptions",
+    "project": "N/A",
+    "approvalDate": null,
+    "approvedBy": null
+  }
+]

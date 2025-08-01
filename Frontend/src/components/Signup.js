@@ -4,6 +4,7 @@ import './styles/global.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from '.././config'; // Import BASE_URL
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/signup/', form);
+      const res = await axios.post(`${BASE_URL}/api/signup/`, form);
       const data = res.data;
 
       const role = data.role || 'user';

@@ -1,9 +1,6 @@
 // components/Admin/AdminDashboard.js
 import React, { useEffect, useState } from 'react';
 
-import UserTable from './UserTable';
-import InvoiceStrucDef from './InvoiceStrucDef2';
-import InvoiceTablePreview from './InvoiceTablePreview';
 
 const AdminDashboard = ({ adminData }) => {
 
@@ -54,7 +51,6 @@ const AdminDashboard = ({ adminData }) => {
 
         .admin-dashboard {
           padding: 24px;
-          font-family: 'Segoe UI', Tahoma, sans-serif;
           background: #f9f9fb;
         }
 
